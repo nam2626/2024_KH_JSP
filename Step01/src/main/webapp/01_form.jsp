@@ -15,7 +15,7 @@
 	</form>
 	<hr>
 	<form action="data_number.jsp" method="post">
-		<input type="number" name="num"><button>전송</button>
+		<input type="number" name="number"><button>전송</button>
 	</form>
 </body>
 </html>
