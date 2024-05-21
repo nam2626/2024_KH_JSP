@@ -24,6 +24,7 @@
 		flex-flow:row nowrap;
 	}
 	li{
+		width:210px;
 		text-align: center;
 		padding:20px 0px;
 		border:1px solid black;
