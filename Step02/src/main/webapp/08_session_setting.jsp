@@ -6,7 +6,7 @@
 
 	//세션 설정
 	session.setAttribute("session", "session 영역에 저장된 내용");
-	session.setMaxInactiveInterval(30);
+	session.setMaxInactiveInterval(300);
 	
 	//페이지 이동
 	//request.getRequestDispatcher("session_result.jsp").forward(request, response);
