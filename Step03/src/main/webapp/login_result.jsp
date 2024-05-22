@@ -9,6 +9,6 @@
 <body>
 	<%=session.getAttribute("id") %><br>
 	<%=session.getAttribute("name") %>님이 로그인하셨습니다.<br>
-	
+	<a href="logout">로그아웃</a>
 </body>
 </html>
