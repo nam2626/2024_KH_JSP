@@ -26,6 +26,7 @@ public class FirstServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String str = request.getParameter("txt");
+		//사용자에게 제공할 데이터를 셋팅, request, session에 셋팅
 		request.setAttribute("txt", str + "서버에서 데이터 추가한 부분");
 		//페이지 이동 처리
 		request.getRequestDispatcher("first_servlet_result.jsp").forward(request, response);
