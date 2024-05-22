@@ -19,4 +19,15 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>SecondeServlet</display-name>
+    <servlet-name>SecondeServlet</servlet-name>
+    <servlet-class>servlet.SecondeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SecondeServlet</servlet-name>
+    <url-pattern>/SecondeServlet</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
