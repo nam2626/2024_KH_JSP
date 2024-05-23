@@ -41,6 +41,7 @@ public class LifeServlet extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("service()");
+		super.service(request, response);
 	}
 
 	/**
