@@ -1,10 +1,11 @@
 package test;
 
+import dao.MemberDAO;
+
 public class MemberTest {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		MemberDAO.getInstance().selectAllMember();
 	}
 
 }
