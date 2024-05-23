@@ -19,4 +19,14 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>InsertEmployeeServlet</display-name>
+    <servlet-name>InsertEmployeeServlet</servlet-name>
+    <servlet-class>servlet.InsertEmployeeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InsertEmployeeServlet</servlet-name>
+    <url-pattern>/InsertEmployeeServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

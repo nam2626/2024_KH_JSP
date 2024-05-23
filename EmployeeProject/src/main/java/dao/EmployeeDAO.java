@@ -60,6 +60,25 @@ public class EmployeeDAO {
 		return list;
 	}
 
+	public int insertEmployee(EmployeeDTO employeeDTO) {
+		int row = 0;
+		String sql = "insert into employee values(?,?,?,?,?,?)";
+		try(PreparedStatement pstmt = ods.getConnection().prepareStatement(sql);){
+			pstmt.setString(1, employeeDTO.getEmpNo());
+			pstmt.setString(2, employeeDTO.getEmpName());
+			pstmt.setString(3, employeeDTO.getEmpPosition());
+			pstmt.setString(4, employeeDTO.getEmpDepartment());
+			pstmt.setInt(5, employeeDTO.getEmpSalary());
+			pstmt.setString(6, employeeDTO.getEmpCourseDate());
+			
+			row = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return row;
+	}
+
 	
 	
 	
