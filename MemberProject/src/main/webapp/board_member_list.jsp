@@ -14,7 +14,6 @@
 		ArrayList<BoardMemberDTO> list = 
 			(ArrayList<BoardMemberDTO>)request.getAttribute("member_list");		
 	%>
-	<!-- 2. 반복문을 이용하여 데이터를 태그와 함께 출력  -->
 	<table>
 		<thead>
 			<tr>
@@ -24,7 +23,22 @@
 				<th>암호</th>
 			</tr>
 		</thead>
-		
+		<tbody>
+			<!-- 2. 반복문을 이용하여 데이터를 태그와 함께 출력  -->
+			<%
+				for(int i=0;i<list.size();i++){
+					%>
+					<tr>
+						<td><%=list.get(i).getBoardMemberId() %></td>
+						<td><%=list.get(i).getBoardMemberName() %></td>
+						<td><%=list.get(i).getBoardMemberNick() %></td>
+						<td><%=list.get(i).getBoardMemberPasswd() %></td>
+					</tr>
+					<%
+				}
+			%>
+			
+		</tbody>
 	</table>
 </body>
 </html>
