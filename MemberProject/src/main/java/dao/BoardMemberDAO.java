@@ -57,23 +57,23 @@ public class BoardMemberDAO {
 	}
 
 	public int insertBoardMember(BoardMemberDTO dto) {
-		String sql = "";
+		String sql = "insert into board_member values(?,?,standard_hash(?,'SHA512'),?)";
 		int row = 0;
 		try (Connection conn = ods.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql);){
-			
 			//1. 데이터 셋팅
-			
+			pstmt.setString(1, dto.getBoardMemberId());
+			pstmt.setString(2, dto.getBoardMemberName());
+			pstmt.setString(3, dto.getBoardMemberPasswd());
+			pstmt.setString(4, dto.getBoardMemberNick());
 			//2. SQL 실행
+			row = pstmt.executeUpdate();
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return row;
 	}
-	
-	
-	
 	
 }
 
