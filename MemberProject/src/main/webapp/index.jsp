@@ -9,7 +9,7 @@
 <body>
 	<ul>
 		<li><a href="./allMember">전체회원정보 조회</a></li>
-		<li><a href="">회원정보 등록</a></li>
+		<li><a href="./member_register.jsp">회원정보 등록</a></li>
 	</ul>
 </body>
 </html>
