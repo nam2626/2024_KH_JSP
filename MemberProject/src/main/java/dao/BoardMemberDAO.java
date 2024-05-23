@@ -55,6 +55,22 @@ public class BoardMemberDAO {
 		}
 		return list;
 	}
+
+	public int insertBoardMember(BoardMemberDTO dto) {
+		String sql = "";
+		int row = 0;
+		try (Connection conn = ods.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql);){
+			
+			//1. 데이터 셋팅
+			
+			//2. SQL 실행
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return row;
+	}
 	
 	
 	
