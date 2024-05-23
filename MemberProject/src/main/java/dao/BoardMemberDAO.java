@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import dto.BoardMemberDTO;
 import oracle.jdbc.pool.OracleDataSource;
 
-public class MemberDAO {
-	private static MemberDAO instance = new MemberDAO();
+public class BoardMemberDAO {
+	private static BoardMemberDAO instance = new BoardMemberDAO();
 	private OracleDataSource ods;
 	
-	private MemberDAO() {
+	private BoardMemberDAO() {
 		try {
 			ods = new OracleDataSource();
 			ods.setURL("jdbc:oracle:thin:@127.0.0.1:1521/xe");
@@ -25,9 +25,9 @@ public class MemberDAO {
 		}
 	}
 
-	public static MemberDAO getInstance() {
+	public static BoardMemberDAO getInstance() {
 		if(instance == null)
-			instance = new MemberDAO();
+			instance = new BoardMemberDAO();
 		return instance;
 	}
 
