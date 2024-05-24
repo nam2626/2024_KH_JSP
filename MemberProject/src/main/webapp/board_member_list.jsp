@@ -36,7 +36,10 @@
 						<td><%=list.get(i).getBoardMemberName() %></td>
 						<td><%=list.get(i).getBoardMemberNick() %></td>
 						<td><%=list.get(i).getBoardMemberPasswd() %></td>
-						<td><a href="./deleteMember?memberId=<%=list.get(i).getBoardMemberId()%>">삭제</a></td>
+						<td>
+							<a href="./updateMemberView?memberId=<%=list.get(i).getBoardMemberId()%>">수정</a>
+							<a href="./deleteMember?memberId=<%=list.get(i).getBoardMemberId()%>">삭제</a>
+						</td>
 					</tr>
 					<%
 				}

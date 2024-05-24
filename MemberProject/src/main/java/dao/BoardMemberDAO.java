@@ -90,6 +90,28 @@ public class BoardMemberDAO {
 		
 		return row;
 	}
+
+	public BoardMemberDTO selectMember(String id) {
+		BoardMemberDTO dto = null;
+		String sql = "select * from board_member where board_member_id like ?";
+		try(Connection conn = ods.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql);){
+				//SQL문 실행
+				try(ResultSet rs = pstmt.executeQuery()){
+					while(rs.next()) {
+						//데이터를 한건씩 뽑아서 리스트에 추가
+						dto = new BoardMemberDTO();
+						dto.setBoardMemberId(rs.getString("BOARD_MEMBER_ID"));
+						dto.setBoardMemberName(rs.getString("BOARD_MEMBER_NAME"));
+						dto.setBoardMemberPasswd(rs.getString("BOARD_MEMBER_PASSWD"));
+						dto.setBoardMemberNick(rs.getString("BOARD_MEMBER_NICK"));
+					}
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		return dto;
+	}
 	
 }
 
