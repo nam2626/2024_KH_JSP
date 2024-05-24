@@ -32,9 +32,12 @@ public class DeleteMemberServlet extends HttpServlet {
 		
 		int row = BoardMemberDAO.getInstance().deleteMember(id);
 		
+		response.setContentType("text/html;charset=utf-8");
+		
 		if(row == 0) {
-			
+			response.getWriter().println("<script>alert('데이터 삭제 실패');history.back();</script>");
 		}else {
+			response.getWriter().println("<script>alert('데이터 삭제 성공');location.href='./index.jsp';</script>");
 			
 		}
 	}
