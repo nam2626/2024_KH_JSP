@@ -113,6 +113,27 @@ public class BoardMemberDAO {
 			}
 		return dto;
 	}
+
+	public int updateMember(BoardMemberDTO dto) {
+		String sql = "update board_member set  board_member_name = ?, "
+				+ "board_member_passwd = standard_hash(?,'SHA512'), "
+				+ "board_member_nick = ? where board_member_id like ?";
+		int row = 0;
+		try (Connection conn = ods.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql);){
+			//1. 데이터 셋팅
+			pstmt.setString(1, dto.getBoardMemberName());
+			pstmt.setString(2, dto.getBoardMemberPasswd());
+			pstmt.setString(3, dto.getBoardMemberNick());
+			pstmt.setString(4, dto.getBoardMemberId());
+			//2. SQL 실행
+			row = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return row;
+	}
 	
 }
 

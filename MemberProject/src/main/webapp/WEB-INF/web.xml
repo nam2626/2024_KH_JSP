@@ -39,4 +39,14 @@
     <servlet-name>UpdateMemberViewServlet</servlet-name>
     <url-pattern>/UpdateMemberViewServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateMemberServlet</display-name>
+    <servlet-name>UpdateMemberServlet</servlet-name>
+    <servlet-class>servlet.UpdateMemberServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateMemberServlet</servlet-name>
+    <url-pattern>/UpdateMemberServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
