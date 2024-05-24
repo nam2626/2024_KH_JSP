@@ -74,6 +74,22 @@ public class BoardMemberDAO {
 		}
 		return row;
 	}
+
+	public int deleteMember(String id) {
+		int row = 0;
+		
+		//회원정보 한건 삭제하는 코드 작성 - insertBoardMember 참고해서 작업
+		String sql = "delete from board_member where board_member_id like ?";
+		
+		try(PreparedStatement pstmt = ods.getConnection().prepareStatement(sql)){
+			pstmt.setString(1, id);
+			row = pstmt.executeUpdate();			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return row;
+	}
 	
 }
 
