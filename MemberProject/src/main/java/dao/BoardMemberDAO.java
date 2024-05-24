@@ -96,6 +96,7 @@ public class BoardMemberDAO {
 		String sql = "select * from board_member where board_member_id like ?";
 		try(Connection conn = ods.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql);){
+				pstmt.setString(1, id);
 				//SQL문 실행
 				try(ResultSet rs = pstmt.executeQuery()){
 					while(rs.next()) {
