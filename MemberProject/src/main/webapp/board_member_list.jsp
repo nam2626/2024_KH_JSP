@@ -23,11 +23,12 @@
 				<th>이름</th>
 				<th>닉네임</th>
 				<th>암호</th>
+				<th>비고</th>
 			</tr>
 		</thead>
 		<tbody>
 			<!-- 2. 반복문을 이용하여 데이터를 태그와 함께 출력  -->
-			<%-- <%
+			<%
 				for(int i=0;i<list.size();i++){
 					%>
 					<tr>
@@ -35,21 +36,24 @@
 						<td><%=list.get(i).getBoardMemberName() %></td>
 						<td><%=list.get(i).getBoardMemberNick() %></td>
 						<td><%=list.get(i).getBoardMemberPasswd() %></td>
+						<td><a href="./deleteMember?memberId=<%=list.get(i).getBoardMemberId()%>">삭제</a></td>
 					</tr>
 					<%
 				}
-			%> --%>
-			<%
+			%>
+			<%-- <%
 				for(int i=0;i<list.size();i++){
 					out.println("<tr>");
 					out.println("<td>"+list.get(i).getBoardMemberId()+"</td>");
 					out.println("<td>"+list.get(i).getBoardMemberName()+"</td>");
 					out.println("<td>"+list.get(i).getBoardMemberNick()+"</td>");
 					out.println("<td>"+list.get(i).getBoardMemberPasswd()+"</td>");
+					out.println("<td><a href='./deleteMember?memberId="+
+								list.get(i).getBoardMemberId()+"'>삭제</a></td>");
 					out.println("</tr>");
 				}
 			
-			%>
+			%> --%>
 			
 			
 		</tbody>
