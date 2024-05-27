@@ -35,7 +35,8 @@ public class SelectAllMemberServlet extends HttpServlet {
 		//2. request영역에 받아온 ArrayList를 저장, member_list로 저장
 		request.setAttribute("member_list", list);
 		//3. 이동할 페이지는 board_member_list.jsp로 이동
-		request.getRequestDispatcher("./board_member_list.jsp").forward(request, response);
+//		request.getRequestDispatcher("./board_member_list.jsp").forward(request, response);
+		request.getRequestDispatcher("./board_member_list_jstl.jsp").forward(request, response);
 	}
 
 	/**
