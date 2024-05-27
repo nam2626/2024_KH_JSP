@@ -17,6 +17,11 @@
 	<p>age : ${requestScope.age }</p>	
 	<p>seesion 영역에 저장된 내용은 sessionScope를 사용해서 뽑음</p>
 	<p>msg : ${sessionScope.msg }</p>
+	<!-- session에 저장된 dto를 출력 -->
+	<p>${sessionScope.dto }<br>${sessionScope.dto.boardMemberId },
+		${sessionScope.dto.boardMemberName },
+		${sessionScope.dto.boardMemberPasswd },
+		${sessionScope.dto.boardMemberNick }</p>
 </body>
 </html>
 
