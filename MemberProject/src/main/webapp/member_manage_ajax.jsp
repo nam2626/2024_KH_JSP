@@ -10,8 +10,11 @@
 		//검색 버튼 클릭 이벤트
 		//   Ajax로 /member/list 호출
 		const button = document.querySelector("#button");
+		
 		button.onclick = () => {
-			fetch('./member/list').then((response) => {
+			//검색어 저장
+			const txt = document.querySelector("#txt").value;
+			fetch('./member/list?txt='+txt).then((response) => {
 				//응답이 정상인 체크
 				/* if(response.status == 200){
 					//정상 일때

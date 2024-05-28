@@ -33,8 +33,11 @@ public class SelectAllMemberAjaxServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//클라이언트에서 보낸 txt 파라미터 읽어오기
+		String txt = request.getParameter("txt");
+		System.out.println(txt);
 		
-		ArrayList<BoardMemberDTO> list = BoardMemberDAO.getInstance().selectAllMember();
+		ArrayList<BoardMemberDTO> list = BoardMemberDAO.getInstance().searchNameMember(txt);
 		JSONArray array = new JSONArray(list);
 		System.out.println(array.toString());
 		//ajax의 결과로 json객체를 문자열로 데이터를 변환해서 전송
