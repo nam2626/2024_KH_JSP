@@ -19,6 +19,10 @@
 	<ul>
 		<li><a href="./allMember">전체회원정보 조회</a></li>
 		<li><a href="./member_register.jsp">회원정보 등록</a></li>
+		<li><a href="./member_manage_ajax.jsp">회원 정보 관리</a></li>		
 	</ul>
 </body>
 </html>
+
+
+

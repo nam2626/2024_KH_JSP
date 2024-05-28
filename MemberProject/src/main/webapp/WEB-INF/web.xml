@@ -19,4 +19,14 @@
     <servlet-name>LogoutServlet</servlet-name>
     <url-pattern>/LogoutServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SelectAllMemberAjaxServlet</display-name>
+    <servlet-name>SelectAllMemberAjaxServlet</servlet-name>
+    <servlet-class>servlet.SelectAllMemberAjaxServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SelectAllMemberAjaxServlet</servlet-name>
+    <url-pattern>/SelectAllMemberAjaxServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
