@@ -11,6 +11,7 @@
 	<c:if test="${sessionScope.user == null }">
 		<!--로그인이 안되었을때 -->
 		<script>
+			alert('로그인 하셔야 이용하실 수 있습니다.');
 			location.href = './login.jsp';
 		</script>
 	</c:if>
