@@ -5,6 +5,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 
 import dao.BoardMemberDAO;
@@ -39,6 +41,10 @@ public class LoginServlet extends HttpServlet {
 		System.out.println(dto);
 		
 		if(dto != null) {
+			dto.setBoardMemberId(null);
+			//세션 처리
+			HttpSession session = request.getSession();
+			session.setAttribute("user", dto);
 			//페이지 이동처리
 			//   로그인 성공시 ./allMember
 			//request.getRequestDispatcher("./allMember").forward(request, response);

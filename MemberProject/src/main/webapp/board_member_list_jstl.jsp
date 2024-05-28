@@ -8,7 +8,17 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<c:if test="${sessionScope.user == null }">
+		<!--로그인이 안되었을때 -->
+		<script>
+			location.href = './login.jsp';
+		</script>
+	</c:if>
 	<h2>전체 회원 리스트</h2>
+	<p>
+		${sessionScope.user.boardMemberName }님이 로그인 하셨습니다.
+		<br><a href="">로그아웃</a>
+	</p>
 	<hr>
 	<table>
 		<thead>
