@@ -26,6 +26,8 @@
 	<h2>jstl</h2>
 	<!-- set : 변수 선언해서 초기화 -->
 	<p><c:set var="tnum" value="1000"></c:set></p>
+	<p><c:set var="obj" value="${sessionScope.dto }"></c:set></p>
+	<p><c:out value="${obj.boardMemberId }"></c:out>,${obj.boardMemberId }</p>
 	<!-- out : 해당 데이터를 출력-->
 	<p><c:out value="${tnum}"></c:out>, ${tnum }</p>
 	<!-- if문, test에 조건식, 단 else, elseif가 없음 -->
