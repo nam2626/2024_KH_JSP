@@ -24,6 +24,7 @@
 			}).then((result) => {
 				//받아온 데이터 html로 출력
 				//result 영역에 출력
+				
 				console.log(result);
 			}).catch((error) => {
 				//에러 처리부분
