@@ -34,10 +34,12 @@ public class SelectAllMemberAjaxServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
+		ArrayList<BoardMemberDTO> list = BoardMemberDAO.getInstance().selectAllMember();
+		JSONArray array = new JSONArray(list);
+		System.out.println(array.toString());
 		//ajax의 결과로 json객체를 문자열로 데이터를 변환해서 전송
 		response.setContentType("text/html;charset=utf-8");//문자코드 변경
-		response.getWriter().println();		
+		response.getWriter().println(array.toString());		
 		
 	}
 
