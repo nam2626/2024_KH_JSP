@@ -9,44 +9,4 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  <servlet>
-    <description></description>
-    <display-name>InsertMemberServlet</display-name>
-    <servlet-name>InsertMemberServlet</servlet-name>
-    <servlet-class>servlet.InsertMemberServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>InsertMemberServlet</servlet-name>
-    <url-pattern>/InsertMemberServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>DeleteMemberServlet</display-name>
-    <servlet-name>DeleteMemberServlet</servlet-name>
-    <servlet-class>servlet.DeleteMemberServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>DeleteMemberServlet</servlet-name>
-    <url-pattern>/DeleteMemberServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>UpdateMemberViewServlet</display-name>
-    <servlet-name>UpdateMemberViewServlet</servlet-name>
-    <servlet-class>servlet.UpdateMemberViewServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>UpdateMemberViewServlet</servlet-name>
-    <url-pattern>/UpdateMemberViewServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>UpdateMemberServlet</display-name>
-    <servlet-name>UpdateMemberServlet</servlet-name>
-    <servlet-class>servlet.UpdateMemberServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>UpdateMemberServlet</servlet-name>
-    <url-pattern>/UpdateMemberServlet</url-pattern>
-  </servlet-mapping>
 </web-app>
