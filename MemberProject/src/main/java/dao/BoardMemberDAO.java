@@ -160,6 +160,33 @@ public class BoardMemberDAO {
 			}
 		return dto;
 	}
+
+	public ArrayList<BoardMemberDTO> searchNameMember(String txt) {
+		//이름 부분 검색으로 회원정보 조회해서 list로 리턴
+		String sql = "select * from board_member "
+				+ "where board_member_name like '%' || ? || '%'";
+		ArrayList<BoardMemberDTO> list = new ArrayList<BoardMemberDTO>();
+		//접속 정보 획득 후 SQL 실행할 준비
+		try(Connection conn = ods.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);){
+			pstmt.setString(1, txt);
+			//SQL문 실행
+			try(ResultSet rs = pstmt.executeQuery()){
+				while(rs.next()) {
+					//데이터를 한건씩 뽑아서 리스트에 추가
+					BoardMemberDTO dto = new BoardMemberDTO();
+					dto.setBoardMemberId(rs.getString("BOARD_MEMBER_ID"));
+					dto.setBoardMemberName(rs.getString("BOARD_MEMBER_NAME"));
+					dto.setBoardMemberPasswd(rs.getString("BOARD_MEMBER_PASSWD"));
+					dto.setBoardMemberNick(rs.getString("BOARD_MEMBER_NICK"));
+					list.add(dto);
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 	
 }
 
