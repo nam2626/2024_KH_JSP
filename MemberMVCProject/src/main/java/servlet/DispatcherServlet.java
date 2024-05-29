@@ -5,7 +5,12 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import view.ModelAndView;
+
 import java.io.IOException;
+
+import controller.Controller;
+import controller.HandlerMapping;
 
 /**
  * Servlet implementation class DispatcherServlet
@@ -29,9 +34,19 @@ public class DispatcherServlet extends HttpServlet {
 		String command = path[path.length-1].replace(".do", "");
 		
 		//작업을 진행
+		Controller controller = HandlerMapping.getInstance().createController(command);
+		ModelAndView view = null;
+		
+		if(controller != null)
+			view = controller.execute(request, response);
 		
 		//페이지 이동 처리
-		
+		if(view != null) {
+			if(view.isRedirect())
+				response.sendRedirect(view.getPath());
+			else
+				request.getRequestDispatcher(view.getPath()).forward(request, response);
+		}
 	}
 
 	/**
