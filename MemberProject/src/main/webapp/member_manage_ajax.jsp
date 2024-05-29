@@ -34,9 +34,28 @@
 					tag += '<li>' + item.boardMemberName + '</li>';
 					tag += '<li>' + item.boardMemberPasswd + '</li>';
 					tag += '<li>' + item.boardMemberNick + '</li>';
+					tag += `<li><a href='#'>삭제</a></li>`;
 					tag += '</ul>';
 				});
-				document.querySelector("#result").innerHTML = tag;				
+				document.querySelector("#result").innerHTML = tag;	
+				document.querySelectorAll('a').forEach((item)=>{
+					item.onclick = function(){
+						//클릭이벤트 처리
+						/*
+							parentNode : 부모 요소
+							childNodes : 자식 요소들(배열)
+							nextSibling : 동생 요소
+							previousSibling : 형 요소
+							firstChild:첫번째 자식요소
+							lastChild : 마지막 자식요소
+						*/
+						console.log(item.parentNode.parentNode.childNodes[0]);
+						console.log(item.parentNode.parentNode.firstChild);
+						console.log(item.parentNode.parentNode.lastChild);
+						let id = item.parentNode.parentNode.firstChild.innerText;
+						alert(id);
+					}
+				});
 				console.log(result);
 			}).catch((error) => {
 				//에러 처리부분
