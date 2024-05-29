@@ -19,6 +19,7 @@
 	<p>
 		${sessionScope.user.boardMemberName }님이 로그인 하셨습니다.
 		<br><a href="./logout.do">로그아웃</a>
+		<a href="./member_register.jsp">회원등록</a>
 	</p>
 	<hr>
 	<table>
