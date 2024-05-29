@@ -63,6 +63,20 @@
 						}).then((response) => {
 							return response.json();
 						}).then((result) => {
+							//선택한 태그 삭제 방법
+							//item.parentNode.parentNode.remove();
+							//결과값으로 받은 list를 다시 화면에 출력하는 코드
+							let tag = '';
+							result.list.forEach((item) => {
+								tag += '<ul>';
+								tag += '<li>' + item.boardMemberId + '</li>';
+								tag += '<li>' + item.boardMemberName + '</li>';
+								tag += '<li>' + item.boardMemberPasswd + '</li>';
+								tag += '<li>' + item.boardMemberNick + '</li>';
+								tag += `<li><a href='#'>삭제</a></li>`;
+								tag += '</ul>';
+							});
+							document.querySelector("#result").innerHTML = tag;	
 							console.log(result);
 						}).catch((error)=>{
 							console.log(error);
