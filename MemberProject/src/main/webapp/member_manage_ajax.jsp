@@ -53,7 +53,20 @@
 						console.log(item.parentNode.parentNode.firstChild);
 						console.log(item.parentNode.parentNode.lastChild);
 						let id = item.parentNode.parentNode.firstChild.innerText;
-						alert(id);
+						//alert(id);
+						let params = {memberId : id};
+						console.log(JSON.stringify(params))
+						//ajax 호출
+						fetch('./member/delete',{
+							method:"post",
+							body : JSON.stringify(params)
+						}).then((response) => {
+							return response.json();
+						}).then((result) => {
+							console.log(result);
+						}).catch((error)=>{
+							console.log(error);
+						})
 					}
 				});
 				console.log(result);

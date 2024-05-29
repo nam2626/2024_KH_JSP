@@ -29,4 +29,24 @@
     <servlet-name>SelectAllMemberAjaxServlet</servlet-name>
     <url-pattern>/SelectAllMemberAjaxServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeletAjaxServlet</display-name>
+    <servlet-name>DeletAjaxServlet</servlet-name>
+    <servlet-class>servlet.DeletAjaxServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeletAjaxServlet</servlet-name>
+    <url-pattern>/DeletAjaxServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteMemberAjaxServlet</display-name>
+    <servlet-name>DeleteMemberAjaxServlet</servlet-name>
+    <servlet-class>servlet.DeleteMemberAjaxServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteMemberAjaxServlet</servlet-name>
+    <url-pattern>/DeleteMemberAjaxServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
