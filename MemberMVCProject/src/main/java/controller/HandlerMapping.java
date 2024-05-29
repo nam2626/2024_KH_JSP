@@ -19,6 +19,9 @@ public class HandlerMapping {
 		case "login":
 			controller = new LoginController();
 			break;
+		case "memberList":
+			controller = new MemberAllController();
+			break;
 		}
 		return controller;
 	}

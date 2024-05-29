@@ -18,7 +18,7 @@
 	<h2>전체 회원 리스트</h2>
 	<p>
 		${sessionScope.user.boardMemberName }님이 로그인 하셨습니다.
-		<br><a href="./logout">로그아웃</a>
+		<br><a href="./logout.do">로그아웃</a>
 	</p>
 	<hr>
 	<table>

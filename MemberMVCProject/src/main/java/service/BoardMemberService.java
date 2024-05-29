@@ -1,5 +1,7 @@
 package service;
 
+import java.util.ArrayList;
+
 import dao.BoardMemberDAO;
 import dto.BoardMemberDTO;
 
@@ -18,6 +20,10 @@ public class BoardMemberService {
 
 	public BoardMemberDTO login(String id, String passwd) {
 		return BoardMemberDAO.getInstance().login(id, passwd);
+	}
+
+	public ArrayList<BoardMemberDTO> selectAllMember() {
+		return BoardMemberDAO.getInstance().selectAllMember();
 	}
 
 	
