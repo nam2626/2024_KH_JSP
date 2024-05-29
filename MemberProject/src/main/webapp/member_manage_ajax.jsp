@@ -6,6 +6,54 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script>
+	function deleteButtonEvent(){
+		document.querySelectorAll('a').forEach((item)=>{
+			item.onclick = function(){
+				//클릭이벤트 처리
+				/*
+					parentNode : 부모 요소
+					childNodes : 자식 요소들(배열)
+					nextSibling : 동생 요소
+					previousSibling : 형 요소
+					firstChild:첫번째 자식요소
+					lastChild : 마지막 자식요소
+				*/
+				console.log(item.parentNode.parentNode.childNodes[0]);
+				console.log(item.parentNode.parentNode.firstChild);
+				console.log(item.parentNode.parentNode.lastChild);
+				let id = item.parentNode.parentNode.firstChild.innerText;
+				//alert(id);
+				let params = {memberId : id};
+				console.log(JSON.stringify(params))
+				//ajax 호출
+				fetch('./member/delete',{
+					method:"post",
+					body : JSON.stringify(params)
+				}).then((response) => {
+					return response.json();
+				}).then((result) => {
+					//선택한 태그 삭제 방법
+					//item.parentNode.parentNode.remove();
+					//결과값으로 받은 list를 다시 화면에 출력하는 코드
+					let tag = '';
+					result.list.forEach((item) => {
+						tag += '<ul>';
+						tag += '<li>' + item.boardMemberId + '</li>';
+						tag += '<li>' + item.boardMemberName + '</li>';
+						tag += '<li>' + item.boardMemberPasswd + '</li>';
+						tag += '<li>' + item.boardMemberNick + '</li>';
+						tag += `<li><a href='#'>삭제</a></li>`;
+						tag += '</ul>';
+					});
+					document.querySelector("#result").innerHTML = tag;
+					deleteButtonEvent();
+					console.log(result);
+				}).catch((error)=>{
+					console.log(error);
+				});//fetch
+			}//onclick
+		});//forEach
+	}//function
 	window.onload = () => {
 		//검색 버튼 클릭 이벤트
 		//   Ajax로 /member/list 호출
@@ -77,6 +125,8 @@
 								tag += '</ul>';
 							});
 							document.querySelector("#result").innerHTML = tag;	
+							//새롭게 추가된 태그들은 다시 이벤트 처리를 해줘야함
+							deleteButtonEvent();
 							console.log(result);
 						}).catch((error)=>{
 							console.log(error);
