@@ -26,6 +26,18 @@ public class BoardMemberService {
 		return BoardMemberDAO.getInstance().selectAllMember();
 	}
 
+	public int deleteMember(String id) {
+		return BoardMemberDAO.getInstance().deleteMember(id);
+	}
+
+	public BoardMemberDTO selectMember(String id) {
+		return BoardMemberDAO.getInstance().selectMember(id);
+	}
+
+	public int updateMember(BoardMemberDTO boardMemberDTO) {
+		return BoardMemberDAO.getInstance().updateMember(boardMemberDTO);
+	}
+
 	
 }
 

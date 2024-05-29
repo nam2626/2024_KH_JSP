@@ -22,6 +22,18 @@ public class HandlerMapping {
 		case "memberList":
 			controller = new MemberAllController();
 			break;
+		case "logout":
+			controller = new LogoutController();
+			break;
+		case "deleteMember":
+			controller = new DeleteMemberController();
+			break;
+		case "updateMemberView":
+			controller = new UpdateMemberViewController();
+			break;
+		case "updateMember":
+			controller = new UpdateMemberController();
+			break;
 		}
 		return controller;
 	}

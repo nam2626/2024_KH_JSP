@@ -40,8 +40,8 @@
 					<td>${member.boardMemberNick }</td>
 					<td>${member.boardMemberPasswd }</td>
 					<td>
-						<a href="./updateMemberView?memberId=${member.boardMemberId }">수정</a>
-						<a href="./deleteMember?memberId=${member.boardMemberId }">삭제</a>
+						<a href="./updateMemberView.do?memberId=${member.boardMemberId }">수정</a>
+						<a href="./deleteMember.do?memberId=${member.boardMemberId }">삭제</a>
 					</td>
 				</tr>
 			</c:forEach>
