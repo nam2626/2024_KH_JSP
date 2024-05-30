@@ -20,7 +20,24 @@
   		board_member_passwd like STANDARD_HASH(#{pass},'SHA512')  
   </select>
   
+  <select id="selectNameMember" parameterType="string" resultMap="member">
+  	select * from board_member 
+		where board_member_name like '%' || #{text} || '%'  	
+  </select>
+  
+	<insert id="insertMember" parameterType="dto.MemberDTO">
+		insert into board_member(board_member_id,board_member_name,
+		board_member_passwd,board_member_nick)
+		values(#{boardMemberId},#{boardMemberName},
+		#{boardMemberPasswd},#{boardMemberNick})
+	</insert>  
 </mapper>
+
+
+
+
+
+
 
 
 

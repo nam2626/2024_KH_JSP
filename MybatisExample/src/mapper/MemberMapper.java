@@ -28,6 +28,10 @@ public class MemberMapper {
 	public MemberDTO login(Map<String, Object> map) {
 		return manager.getSession().selectOne("login", map);
 	}
+
+	public List<MemberDTO> selectNameMember(String text) {
+		return manager.getSession().selectList("selectNameMember",text);
+	}
 	
 	
 }

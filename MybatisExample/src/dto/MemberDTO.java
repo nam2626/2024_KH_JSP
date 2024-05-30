@@ -48,6 +48,12 @@ public class MemberDTO {
 		this.boardMemberNick = boardMemberNick;
 	}
 
+	@Override
+	public String toString() {
+		return "MemberDTO [boardMemberId=" + boardMemberId + ", boardMemberName=" + boardMemberName
+				+ ", boardMemberPasswd=" + boardMemberPasswd + ", boardMemberNick=" + boardMemberNick + "]";
+	}
+
 	
 	
 }
