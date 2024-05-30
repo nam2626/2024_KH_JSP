@@ -1,8 +1,11 @@
 package mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import config.DBManager;
+import dto.MemberDTO;
 
 public class MemberMapper {
 	private static MemberMapper instance = new MemberMapper();
@@ -18,8 +21,9 @@ public class MemberMapper {
 		return instance;
 	}
 	
-	public void selectAllMember() {
-		SqlSession session = manager.getSession();
+	public List<MemberDTO> selectAllMember() {
+		List<MemberDTO> list = manager.getSession().selectList("selectAllMember"); 
+		return list;
 	}
 
 	
