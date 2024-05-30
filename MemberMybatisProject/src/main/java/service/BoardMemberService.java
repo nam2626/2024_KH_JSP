@@ -2,13 +2,17 @@ package service;
 
 import java.util.ArrayList;
 
+import config.DBManager;
 import dao.BoardMemberDAO;
 import dto.BoardMemberDTO;
+import mapper.BoardMemberMapper;
 
 public class BoardMemberService {
 	private static BoardMemberService instance = new BoardMemberService();
-
+	private BoardMemberMapper mapper;
 	private BoardMemberService() {
+		mapper = DBManager.getInstance()
+				.getSession().getMapper(BoardMemberMapper.class);
 	
 	}
 
