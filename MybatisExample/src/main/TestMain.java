@@ -22,10 +22,13 @@ public class TestMain {
 //		System.out.println(dto);
 		
 		//이름 일부분으로 검색해서 결과를 출력하는 코드 dto 클래스에 toString
-		String text = "A";
-		List<MemberDTO> list = MemberMapper.getInstance().selectNameMember(text);
-		System.out.println(list);
+//		String text = "A";
+//		List<MemberDTO> list = MemberMapper.getInstance().selectNameMember(text);
+//		System.out.println(list);
 		
+		MemberDTO dto = new MemberDTO("A0002","김철수","123456","KIM");
+		int result = MemberMapper.getInstance().insertMember(dto);
+		System.out.println(result);
 	}
 
 }

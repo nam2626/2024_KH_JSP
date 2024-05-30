@@ -32,6 +32,10 @@ public class MemberMapper {
 	public List<MemberDTO> selectNameMember(String text) {
 		return manager.getSession().selectList("selectNameMember",text);
 	}
+
+	public int insertMember(MemberDTO dto) {
+		return manager.getSession().insert("insertMember", dto);
+	}
 	
 	
 }
