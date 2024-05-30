@@ -36,6 +36,14 @@ public class MemberMapper {
 	public int insertMember(MemberDTO dto) {
 		return manager.getSession().insert("insertMember", dto);
 	}
+
+	public int deleteMember(String id) {
+		return manager.getSession().delete("deleteMember", id);
+	}
+
+	public int updateMember(Map<String, Object> map) {
+		return manager.getSession().update("updateMember", map);
+	}
 	
 	
 }
