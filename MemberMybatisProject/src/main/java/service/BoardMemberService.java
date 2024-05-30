@@ -1,6 +1,8 @@
 package service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import config.DBManager;
 import dao.BoardMemberDAO;
@@ -23,7 +25,10 @@ public class BoardMemberService {
 	}
 
 	public BoardMemberDTO login(String id, String passwd) {
-		return BoardMemberDAO.getInstance().login(id, passwd);
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("id", id);
+		map.put("pass", passwd);
+		return mapper.login(map);
 	}
 
 	public ArrayList<BoardMemberDTO> selectAllMember() {
