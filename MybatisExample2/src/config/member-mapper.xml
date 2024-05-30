@@ -18,3 +18,7 @@
   	select * from board_member where board_member_id like #{id} and board_member_passwd like STANDARD_HASH(#{passwd},'SHA512')
   </select>
 </mapper>
+
+
+
+

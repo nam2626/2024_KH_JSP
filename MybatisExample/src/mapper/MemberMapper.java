@@ -1,8 +1,7 @@
 package mapper;
 
 import java.util.List;
-
-import org.apache.ibatis.session.SqlSession;
+import java.util.Map;
 
 import config.DBManager;
 import dto.MemberDTO;
@@ -26,7 +25,12 @@ public class MemberMapper {
 		return list;
 	}
 
-	
+	public MemberDTO login(Map<String, Object> map) {
+		return manager.getSession().selectOne("login", map);
+	}
 	
 	
 }
+
+
+
