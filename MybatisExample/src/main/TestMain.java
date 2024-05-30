@@ -14,12 +14,13 @@ public class TestMain {
 		 * i = 0; i < list.size();i++)
 		 * System.out.println(list.get(i).getBoardMemberId());
 		 */
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("id", "A0001");
-		map.put("pass", "123456");
-		MemberDTO dto = MemberMapper.getInstance().login(map);
-			
-		System.out.println(dto);
+//		Map<String, Object> map = new HashMap<String, Object>();
+//		map.put("id", "A0001");
+//		map.put("pass", "123456");
+//		MemberDTO dto = MemberMapper.getInstance().login(map);
+//		System.out.println(dto);
+		
+		//이름 일부분으로 검색해서 결과를 출력하는 코드 dto 클래스에 toString
 	}
 
 }
