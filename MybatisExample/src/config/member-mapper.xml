@@ -29,7 +29,7 @@
 		insert into board_member(board_member_id,board_member_name,
 		board_member_passwd,board_member_nick)
 		values(#{boardMemberId},#{boardMemberName},
-		#{boardMemberPasswd},#{boardMemberNick})
+			#{boardMemberPasswd},#{boardMemberNick})
 	</insert>  
 </mapper>
 
