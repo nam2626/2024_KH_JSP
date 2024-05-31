@@ -36,7 +36,7 @@ public class BoardMemberService {
 	}
 
 	public int deleteMember(String id) {
-		return BoardMemberDAO.getInstance().deleteMember(id);
+		return mapper.deleteMember(id);
 	}
 
 	public BoardMemberDTO selectMember(String id) {
