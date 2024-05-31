@@ -24,6 +24,11 @@
   	select * from board_member 
 		where board_member_name like '%' || #{text} || '%'  	
   </select>
+
+  <select id="selectMember" parameterType="string" resultMap="member">
+  	select * from board_member 
+		where board_member_id like #{text}  	
+  </select>
   
 	<insert id="insertMember" parameterType="dto.BoardMemberDTO">
 		insert into board_member(board_member_id,board_member_name,

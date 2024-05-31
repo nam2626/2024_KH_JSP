@@ -40,7 +40,7 @@ public class BoardMemberService {
 	}
 
 	public BoardMemberDTO selectMember(String id) {
-		return BoardMemberDAO.getInstance().selectMember(id);
+		return mapper.selectMember(id);
 	}
 
 	public int updateMember(BoardMemberDTO boardMemberDTO) {
