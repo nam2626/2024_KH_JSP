@@ -16,6 +16,13 @@
 				return response.json(); 
 			}).then((json) => {
 				console.log(json);
+				let r = json.reduce((acc,item) => {
+					console.log(item);
+					return acc + `<tr><td>\${item.boardMemberId}</td><td>\${item.boardMemberName}</td><td>\${item.boardMemberNick}</td><td>\${item.boardMemberPasswd}</td></tr>`;
+				}, '');
+				console.log(r);
+				document.querySelector("#result").innerHTML = r;
+				
 			}).catch((error) => console.log(error));
 		}
 	}
