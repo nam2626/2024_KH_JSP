@@ -44,7 +44,7 @@ public class BoardMemberService {
 	}
 
 	public int updateMember(BoardMemberDTO boardMemberDTO) {
-		return BoardMemberDAO.getInstance().updateMember(boardMemberDTO);
+		return mapper.updateMember(boardMemberDTO);
 	}
 
 	public int insertMember(BoardMemberDTO boardMemberDTO) {

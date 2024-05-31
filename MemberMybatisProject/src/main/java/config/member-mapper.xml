@@ -41,9 +41,11 @@
 		delete from board_member where board_member_id like #{id}
 	</delete>
 	
-	<update id="updateMember" parameterType="map">
-		update board_member set board_member_nick = #{nick}
-		where board_member_name like '%' || #{search} || '%'
+	<update id="updateMember" parameterType="dto.BoardMemberDTO">
+		update board_member set board_member_name = #{boardMemberName}, 
+		board_member_nick = #{boardMemberNick}
+		, board_member_passwd = #{boardMemberPasswd}
+		where board_member_id like #{boardMemberId}
 	</update>
 	
 	
