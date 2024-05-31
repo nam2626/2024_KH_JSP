@@ -13,5 +13,6 @@ public interface BoardMemberMapper {
 	int insertMember(BoardMemberDTO boardMemberDTO);
 	BoardMemberDTO selectMember(String id);
 	int updateMember(BoardMemberDTO boardMemberDTO);
+	List<BoardMemberDTO> selectNameMember(String search);
 
 }

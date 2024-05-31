@@ -50,6 +50,10 @@ public class BoardMemberService {
 		return mapper.insertMember(boardMemberDTO);
 	}
 
+	public List<BoardMemberDTO> selectNameMember(String search) {
+		return mapper.selectNameMember(search);
+	}
+
 	
 }
 
