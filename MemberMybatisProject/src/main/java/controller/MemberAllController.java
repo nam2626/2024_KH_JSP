@@ -1,9 +1,8 @@
 package controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 
-import dao.BoardMemberDAO;
 import dto.BoardMemberDTO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -16,7 +15,7 @@ public class MemberAllController implements Controller {
 	public ModelAndView execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		ModelAndView view = null;
 		
-		ArrayList<BoardMemberDTO> list = BoardMemberService.getInstance().selectAllMember();
+		List<BoardMemberDTO> list = BoardMemberService.getInstance().selectAllMember();
 		request.setAttribute("member_list", list);
 		view = new ModelAndView(false, "./board_member_list_jstl.jsp");		
 		

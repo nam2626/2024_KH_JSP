@@ -1,7 +1,7 @@
 package service;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import config.DBManager;
@@ -31,8 +31,8 @@ public class BoardMemberService {
 		return mapper.login(map);
 	}
 
-	public ArrayList<BoardMemberDTO> selectAllMember() {
-		return BoardMemberDAO.getInstance().selectAllMember();
+	public List<BoardMemberDTO> selectAllMember() {
+		return mapper.selectAllMember();
 	}
 
 	public int deleteMember(String id) {
