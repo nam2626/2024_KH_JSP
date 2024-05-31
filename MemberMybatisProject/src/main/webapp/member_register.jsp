@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h2>회원정보 등록 페이지</h2>
-	<form action="./insertMember" method="post">
+	<form action="./insertMember.do" method="post">
 		<!-- 아이디 암호 이름 닉네임, submit button -->
 		<input type="text" name="member_id" placeholder="아이디 입력"><br>
 		<input type="password" name="member_passwd" placeholder="암호 입력"><br>

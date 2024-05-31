@@ -34,6 +34,9 @@ public class HandlerMapping {
 		case "updateMember":
 			controller = new UpdateMemberController();
 			break;
+		case "insertMember":
+			controller = new InsertMemberController();
+			break;
 		}
 		return controller;
 	}
