@@ -44,7 +44,7 @@
 	<update id="updateMember" parameterType="dto.BoardMemberDTO">
 		update board_member set board_member_name = #{boardMemberName}, 
 		board_member_nick = #{boardMemberNick}
-		, board_member_passwd = #{boardMemberPasswd}
+		, board_member_passwd = standard_hash(#{boardMemberPasswd},'SHA512')
 		where board_member_id like #{boardMemberId}
 	</update>
 	

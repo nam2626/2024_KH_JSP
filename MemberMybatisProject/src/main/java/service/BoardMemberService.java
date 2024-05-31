@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import config.DBManager;
-import dao.BoardMemberDAO;
 import dto.BoardMemberDTO;
 import mapper.BoardMemberMapper;
 
