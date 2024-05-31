@@ -6,6 +6,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+	window.onload = () => {
+		document.querySelector("#btn_search").onclick = () => {
+			const txtSearch = document.querySelector("#search").value;
+			console.log(txtSearch);
+			fetch('./searchMember.do?search='+txtSearch)
+			.then((response) => {
+				return response.json(); 
+			}).then((json) => {
+				console.log(json);
+			}).catch((error) => console.log(error));
+		}
+	}
+
+</script>
 </head>
 <body>
 	<c:if test="${sessionScope.user == null }">
@@ -25,6 +40,12 @@
 	<table>
 		<thead>
 			<tr>
+				<td colspan="5">
+					<input type="text" id="search" placeholder="이름으로 검색">
+					<button id="btn_search">검색</button>
+				</td>
+			</tr>
+			<tr>
 				<th>아이디</th>
 				<th>이름</th>
 				<th>닉네임</th>
@@ -32,7 +53,7 @@
 				<th>비고</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody id="result">
 			<!-- 2. 반복문을 이용하여 데이터를 태그와 함께 출력  -->
 			<c:forEach var="member" items="${requestScope.member_list }">
 				<tr>

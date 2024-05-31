@@ -11,7 +11,7 @@
 	<!-- 로그인이 되어있으면 index.jsp로 이동하게끔 처리 -->
 	<c:if test="${sessionScope.user != null }">
 		<script>
-			location.href = './index.jsp';
+			location.href = './memberList.do';
 		</script>
 	</c:if>
 	<form action="./login.do" method="post">
