@@ -46,6 +46,9 @@ public class HandlerMapping {
 		case "boardWrite":
 			controller = new BoardWriteController();
 			break;
+		case "boardView":
+			controller = new BoardViewController();
+			break;
 			
 		}
 		return controller;

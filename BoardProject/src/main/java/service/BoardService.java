@@ -28,6 +28,10 @@ public class BoardService {
 		return mapper.insertBoard(new BoardDTO(title, writer, content));
 	}
 
+	public BoardDTO selectBoard(int bno) {
+		return mapper.selectBoard(bno);
+	}
+
 	
 	
 	

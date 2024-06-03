@@ -20,11 +20,15 @@
 	<select id="selectBoardList" resultMap="board">
 		select * from board_view 
 	</select>
+	<select id="selectBoard" parameterType="int" resultMap="board">
+		select * from board_view where board_no = #{bno}
+	</select>
 	
 	<insert id="insertBoard" parameterType="dto.BoardDTO">
 		insert into board(board_no, board_title, board_content, board_member_id)
 		values(board_seq.nextval,#{boardTitle},#{boardContent},#{boardMemberId})
 	</insert>
+	
 	
 </mapper>
 
