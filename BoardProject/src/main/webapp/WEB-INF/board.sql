@@ -1,5 +1,29 @@
 --------------------------------------------------------
---  ������ ������ - ������-6��-03-2024   
+--게시글 목록을 조회
+--	글번호, 제목, 내용, 조회수, 작성일, 작성자(ID), 좋아요, 싫어요
+SELECT B.* FROM BOARD B;
+
+--좋아요/싫어요
+SELECT COUNT(*) FROM BOARD_CONTENT_LIKE BCL WHERE BCL.BOARD_NO = ?;
+SELECT COUNT(*) FROM BOARD_CONTENT_HATE BCH WHERE BCH.BOARD_NO = ?;
+
+SELECT B.* ,
+(SELECT COUNT(*) FROM BOARD_CONTENT_LIKE BCL WHERE BCL.BOARD_NO = B.BOARD_NO) AS BOARD_CONTENT_LIKE,
+(SELECT COUNT(*) FROM BOARD_CONTENT_HATE BCH WHERE BCH.BOARD_NO = B.BOARD_NO) AS BOARD_CONTENT_HATE
+FROM BOARD B;
+
+CREATE OR REPLACE VIEW BOARD_VIEW 
+AS 
+SELECT B.* ,
+(SELECT COUNT(*) FROM BOARD_CONTENT_LIKE BCL WHERE BCL.BOARD_NO = B.BOARD_NO) AS BOARD_CONTENT_LIKE,
+(SELECT COUNT(*) FROM BOARD_CONTENT_HATE BCH WHERE BCH.BOARD_NO = B.BOARD_NO) AS BOARD_CONTENT_HATE
+FROM BOARD B;
+
+SELECT * FROM BOARD_VIEW;
+
+
+--------------------------------------------------------
+--  ������ ������ - ������-6��-03-2024   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Table BOARD
