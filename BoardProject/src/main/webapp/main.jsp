@@ -54,6 +54,11 @@
 				</tr>
 			</c:forEach>
 		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="7"><a href="./board_write.jsp">글쓰기</a></td>
+			</tr>
+		</tfoot>
 	</table>
 
 </body>
