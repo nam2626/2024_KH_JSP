@@ -12,6 +12,15 @@ public class BoardWriteController implements Controller {
 
 	@Override
 	public ModelAndView execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		//로그인한 사람만 글쓰기를 수행하게끔 세션 정보 처리
+		if(request.getSession().getAttribute("user") == null) {
+			response.setContentType("text/html;charset=utf-8");
+			response.getWriter().println("<script>"
+					+ "alert('로그인 하셔야 이용하실수 있습니다');"
+					+ "location.href='./index.jsp'"
+					+ "</script>");
+			return null;
+		}
 		//1. Parameter 받음
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
