@@ -3,7 +3,20 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.BoardMapper">
+ 	<!-- BoardDTO에 해당하는 resultMap -->
+ 	<resultMap type="dto.BoardDTO" id="board">
+ 		<id column="BOARD_NO" property="boardNo" />
+ 		<result column="BOARD_TITLE" property="boardTitle"/>
+ 		<result column="BOARD_MEMBER_ID" property="boardMemberId"/>
+ 		<result column="BOARD_MEMBER_NICK" property="boardMemberNick"/>
+ 		<result column="BOARD_CONTENT" property="boardContent"/>
+ 		<result column="BOARD_WRITE_DATE" property="boardWriteDate"/>
+ 		<result column="BOARD_COUNT" property="boardCount"/>
+ 		<result column="BOARD_CONTENT_LIKE" property="boardLike"/>
+ 		<result column="BOARD_CONTENT_HATE" property="boardHate"/>
+ 	</resultMap>
  	
+ 	<!-- 전체 게시글 조회하는 SQL문 작성  -->
 	
 	
 </mapper>
