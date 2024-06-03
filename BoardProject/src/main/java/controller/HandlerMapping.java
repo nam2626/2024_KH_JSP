@@ -40,6 +40,9 @@ public class HandlerMapping {
 		case "searchMember":
 			controller = new SearchMemberController();
 			break;
+		case "main":
+			controller = new MainController();
+			break;
 			
 		}
 		return controller;
