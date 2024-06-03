@@ -22,7 +22,7 @@ public class LoginController implements Controller {
 			//세션에 로그인 정보 추가
 			request.getSession().setAttribute("user", dto);
 			//결과 받아서 페이지 이동할 정보를 ModelAndView를 생성해서 셋팅
-			view = new ModelAndView(true, "./memberList.do");
+			view = new ModelAndView(true, "./main.do");
 		}else {
 			response.setContentType("text/html;charset=utf-8");
 			response.getWriter().println("<script>"

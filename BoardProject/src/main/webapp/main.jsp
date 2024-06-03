@@ -1,10 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	}
+	table{
+		border-collapse: collapse;
+		margin: 20px auto;
+		width: 1200px;
+	}
+	td, th{
+		padding:10px;
+		border: 1px solid black;
+		text-align: center;
+	}
+</style>
 </head>
 <body>
 
@@ -25,7 +42,17 @@
 			</tr>	
 		</thead>		
 		<tbody>
-			
+			<c:forEach var="board" items="${requestScope.boardList }">
+				<tr>
+					<td>${board.boardNo }</td>
+					<td>${board.boardTitle }</td>
+					<td>${board.boardMemberNick }</td>
+					<td>${board.boardCount }</td>
+					<td>${board.boardWriteDate }</td>
+					<td>${board.boardLike }</td>
+					<td>${board.boardHate}</td>
+				</tr>
+			</c:forEach>
 		</tbody>
 	</table>
 
