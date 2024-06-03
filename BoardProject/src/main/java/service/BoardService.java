@@ -24,6 +24,10 @@ public class BoardService {
 		return mapper.selectBoardList();
 	}
 
+	public int insertBoard(String title, String content, String writer) {
+		return mapper.insertBoard(new BoardDTO(title, writer, content));
+	}
+
 	
 	
 	
