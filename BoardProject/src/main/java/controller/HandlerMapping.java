@@ -55,6 +55,9 @@ public class HandlerMapping {
 		case "boardUpdate":
 			controller = new BoardUpdateController();
 			break;
+		case "boardDelete":
+			controller = new BoardDeleteController();
+			break;
 		}
 		return controller;
 	}

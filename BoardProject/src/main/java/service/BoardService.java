@@ -36,6 +36,10 @@ public class BoardService {
 		return mapper.updateBoard(dto);
 	}
 
+	public int deleteBoard(int bno) {
+		return mapper.deleteBoard(bno);
+	}
+
 	
 	
 	

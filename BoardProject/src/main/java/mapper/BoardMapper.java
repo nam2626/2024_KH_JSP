@@ -10,5 +10,6 @@ public interface BoardMapper {
 	int insertBoard(BoardDTO boardDTO);
 	BoardDTO selectBoard(int bno);
 	int updateBoard(BoardDTO dto);
+	int deleteBoard(int bno);
 
 }

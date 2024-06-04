@@ -34,6 +34,9 @@
 		where board_no = #{boardNo}
 	</update>
 	
+	<delete id="deleteBoard" parameterType="int">
+		delete from board where board_no = #{bno}
+	</delete>
 </mapper>
 
 

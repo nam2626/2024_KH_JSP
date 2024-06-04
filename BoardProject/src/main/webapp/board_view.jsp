@@ -155,6 +155,9 @@
 			 		document.querySelector("#btn_update").onclick = () =>{
 			 			location.href='./boardUpdateView.do?bno=${board.boardNo}';
 			 		}
+			 		document.querySelector("#btn_delete").onclick = () =>{
+			 			location.href='./boardDelete.do?bno=${board.boardNo}';
+			 		}
 			 	</script>
 			 </td>
 	 	</tr>
