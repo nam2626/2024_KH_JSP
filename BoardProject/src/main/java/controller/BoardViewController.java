@@ -16,7 +16,7 @@ public class BoardViewController implements Controller {
 		System.out.println(bno);
 		//서비스로 게시글 번호 보내서 게시글 받아옴
 		BoardDTO dto = BoardService.getInstance().selectBoard(bno);
-		
+		dto.setBoardContent(dto.getBoardContent().replaceAll("\n" , "<br>"));
 		request.setAttribute("board", dto);
 		
 		return new ModelAndView(false, "./board_view.jsp");

@@ -30,7 +30,7 @@
 	</insert>
 	
 	<update id="updateBoard" parameterType="dto.BoardDTO">
-		update board set board_title = #{boardTitle}, board_content = #{board_content}
+		update board set board_title = #{boardTitle}, board_content = #{boardContent}
 		where board_no = #{boardNo}
 	</update>
 	
