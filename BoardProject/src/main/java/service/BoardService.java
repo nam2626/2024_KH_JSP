@@ -32,6 +32,10 @@ public class BoardService {
 		return mapper.selectBoard(bno);
 	}
 
+	public int updateBoard(BoardDTO dto) {
+		return mapper.updateBoard(dto);
+	}
+
 	
 	
 	
