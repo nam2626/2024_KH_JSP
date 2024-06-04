@@ -29,6 +29,10 @@
 		values(board_seq.nextval,#{boardTitle},#{boardContent},#{boardMemberId})
 	</insert>
 	
+	<update id="updateBoard" parameterType="dto.BoardDTO">
+		update board set board_title = #{boardTitle}, board_content = #{board_content}
+		where board_no = #{boardNo}
+	</update>
 	
 </mapper>
 

@@ -46,8 +46,7 @@
 		<form action="./boardUpdate.do" method="post">
 			<input type="text" name="title" placeholder="제목을 입력하세요" value="${board.boardTitle }">
 			<textarea name="content" placeholder="내용을 입력하세요">${board.boardContent }</textarea>
-			<input type="hidden" name="writer"
-				value="${sessionScope.user.boardMemberId }">
+			<input type="hidden" name="bno" value="${board.boardNo}">
 			<div class="form_bar">
 				<button type="submit" class="btn_submit">글수정</button>
 				<button type="button" class="btn_back">뒤로가기</button>
