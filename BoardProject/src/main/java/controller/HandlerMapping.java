@@ -52,6 +52,9 @@ public class HandlerMapping {
 		case "boardUpdateView":
 			controller = new BoardUpdateViewController();
 			break;
+		case "boardUpdate":
+			controller = new BoardUpdateController();
+			break;
 		}
 		return controller;
 	}
