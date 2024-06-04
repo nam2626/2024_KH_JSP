@@ -143,7 +143,22 @@
 				<a href="#" id="btn_hate">싫어요 : <span id="hate_count">${board.boardHate }</span> </a>
 			</td>
 		</tr>
-		
+		<!-- 
+			해당 글을 쓴 작성자에게만 수정, 삭제 버튼이 나오게끔 처리
+		 -->
+		 <c:if test="${sessionScope.user.boardMemberId == board.boardMemberId }">
+		 <tr>
+			 <td colspan="2">
+			 	<button id="btn_update">수정</button>
+			 	<button id="btn_delete">삭제</button>
+			 	<script>
+			 		document.querySelector("#btn_update").onclick = () =>{
+			 			location.href='./boardUpdateView.do?bno=${board.boardNo}';
+			 		}
+			 	</script>
+			 </td>
+	 	</tr>
+		 </c:if>
 	</table>
 	<hr>
 	
