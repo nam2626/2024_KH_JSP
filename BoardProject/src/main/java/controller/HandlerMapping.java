@@ -58,6 +58,9 @@ public class HandlerMapping {
 		case "boardDelete":
 			controller = new BoardDeleteController();
 			break;
+		case "boardLike":
+			controller = new BoardLikeController();
+			break;
 		}
 		return controller;
 	}

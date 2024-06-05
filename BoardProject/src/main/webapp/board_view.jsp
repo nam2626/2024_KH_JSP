@@ -111,6 +111,23 @@
 		margin:0;
 	}
 </style>
+<script>
+	window.onload = () => {
+		//좋아요 링크 클릭 -> 경고창 띄우기
+		document.querySelector('#btn_like').onclick = () => {
+			//alert('좋아요 클릭')
+			fetch('./boardLike.do?bno=${board.boardNo}')
+			.then(response => response.json())
+			.then((result) => {
+				console.log(result);		
+			})
+			.catch((error) => {
+				console.log(error);
+			})
+		}
+	}
+
+</script>
 </head>
 <body>
 <div id="container">
