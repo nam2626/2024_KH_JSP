@@ -121,6 +121,8 @@
 			.then((result) => {
 				console.log(result);
 				//좋아요 개수 갱신
+				alert(result.msg);
+				document.querySelector("#like_count").innerHTML = result.count;
 			})
 			.catch((error) => {
 				console.log(error);
