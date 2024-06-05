@@ -83,6 +83,10 @@ public class BoardService {
 		return mapper.selectBoardNewList(map);
 	}
 
+	public int selectBoardTotalCount() {
+		return mapper.selectBoardTotalCount();
+	}
+
 	
 	
 	

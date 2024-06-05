@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import service.BoardService;
 import view.ModelAndView;
+import vo.PaggingVO;
 
 public class MainController implements Controller {
 
@@ -26,7 +27,13 @@ public class MainController implements Controller {
 		List<BoardDTO> list = 
 				BoardService.getInstance().selectBoardList(Integer.parseInt(pageNo),Integer.parseInt(pageContentEa));
 		
+		//PaggingVO : 페이징 정보 저장
+		int totalCount = BoardService.getInstance().selectBoardTotalCount();
+		PaggingVO pagging = 
+				new PaggingVO(totalCount, 
+						Integer.parseInt(pageNo),Integer.parseInt(pageContentEa));
 		request.setAttribute("boardList", list);
+		request.setAttribute("pagging", pagging);
 		
 		return new ModelAndView(false, "./main.jsp");
 	}
