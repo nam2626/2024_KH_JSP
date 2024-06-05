@@ -119,7 +119,8 @@
 			fetch('./boardLike.do?bno=${board.boardNo}')
 			.then(response => response.json())
 			.then((result) => {
-				console.log(result);		
+				console.log(result);
+				//좋아요 개수 갱신
 			})
 			.catch((error) => {
 				console.log(error);

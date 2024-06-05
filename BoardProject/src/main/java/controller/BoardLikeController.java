@@ -28,6 +28,7 @@ public class BoardLikeController implements Controller {
 			json.put("msg", "로그인 하셔야 이용할 수 있습니다.");
 		}
 		
+		
 		response.setContentType("text/html;charset=utf-8");
 		response.getWriter().println(json.toString());
 		return null;
