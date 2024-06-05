@@ -39,13 +39,13 @@
 	</delete>
 	
 	<insert id="insertBoardLike" parameterType="map">
-		insert into board_like values(#{id},#{bno})
+		insert into board_content_like values(#{id},#{bno})
 	</insert>
 	<delete id="deleteBoardLike" parameterType="map">
-		delete from board_like where board_member_id = #{id} and board_no = #{bno}
+		delete from board_content_like where board_member_id = #{id} and board_no = #{bno}
 	</delete>
 	<select id="selectBoardLikeCount" parameterType="int">
-		select count(*) from board_like where board_no = #{bno}
+		select count(*) from board_content_like where board_no = #{bno}
 	</select>
 </mapper>
 
