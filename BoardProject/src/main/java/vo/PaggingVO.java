@@ -31,7 +31,23 @@ public class PaggingVO {
 				(getTotalPage() % PAGE_GROUP_OF_COUNT == 0 ? 0 : 1);
 	}
 	
+	//현재 페이지의 그룹번호
+	public int getCurrentPageGroupNo() {
+		return currentPage / PAGE_GROUP_OF_COUNT + 
+				(currentPage % PAGE_GROUP_OF_COUNT == 0 ? 0 : 1);
+	}
 	
+	//현재 페이지 그룹의 시작 페이지 번호 
+	public int getStartPageOfPageGroup() {
+		return (getCurrentPageGroupNo()-1) * PAGE_GROUP_OF_COUNT + 1;
+	}
+	//현재 페이지 그룹의 마지막 페이지 번호 
+	public int getEndPageOfPageGroup() {
+		int lastNo = getCurrentPageGroupNo() * PAGE_GROUP_OF_COUNT;
+		if(lastNo > getTotalPage())
+			lastNo = getTotalPage();
+		return lastNo;
+	}
 }
 
 
