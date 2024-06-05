@@ -1,6 +1,9 @@
 package service;
 
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import config.DBManager;
 import dto.BoardDTO;
@@ -38,6 +41,23 @@ public class BoardService {
 
 	public int deleteBoard(int bno) {
 		return mapper.deleteBoard(bno);
+	}
+
+	public int insertBoardLike(int bno, String boardMemberId) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("bno", bno);
+		map.put("id", boardMemberId);
+		return mapper.insertBoardLike(map);
+	}
+	public int deleteBoardLike(int bno, String boardMemberId) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("bno", bno);
+		map.put("id", boardMemberId);
+		return mapper.deleteBoardLike(map);
+	}
+
+	public int selectBoardLikeCount(int bno) {
+		return mapper.selectBoardLikeCount(bno);
 	}
 
 	

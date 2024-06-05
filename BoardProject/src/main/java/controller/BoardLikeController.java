@@ -37,6 +37,7 @@ public class BoardLikeController implements Controller {
 			json.put("msg", "해당 게시글에 좋아요를 하셨습니다.");
 		}catch (Exception e) {
 			//이미 좋아요를 했을 떄 처리
+			//board_like 테이블에 사용자ID/글번호를 delete
 			BoardService.getInstance().deleteBoardLike(bno, dto.getBoardMemberId());
 			json.put("code", 0);
 			json.put("msg", "해당 게시글에 좋아요를 취소 하셨습니다.");
