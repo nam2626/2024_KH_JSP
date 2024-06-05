@@ -120,9 +120,27 @@
 			.then(response => response.json())
 			.then((result) => {
 				console.log(result);
+				if(result.code == 2){
+					if(confirm(result.msg))	location.href='./index.jsp';
+				}
+				else alert(result.msg);
 				//좋아요 개수 갱신
-				alert(result.msg);
 				document.querySelector("#like_count").innerHTML = result.count;
+			})
+			.catch((error) => {
+				console.log(error);
+			})
+		}
+		document.querySelector('#btn_hate').onclick = () => {
+			fetch('./boardHate.do?bno=${board.boardNo}')
+			.then(response => response.json())
+			.then((result) => {
+				console.log(result);
+				if(result.code == 2){
+					if(confirm(result.msg))	location.href='./index.jsp';
+				}
+				else alert(result.msg);
+				document.querySelector("#hate_count").innerHTML = result.count;
 			})
 			.catch((error) => {
 				console.log(error);

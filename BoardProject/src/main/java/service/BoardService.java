@@ -59,6 +59,22 @@ public class BoardService {
 	public int selectBoardLikeCount(int bno) {
 		return mapper.selectBoardLikeCount(bno);
 	}
+	public int insertBoardHate(int bno, String boardMemberId) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("bno", bno);
+		map.put("id", boardMemberId);
+		return mapper.insertBoardHate(map);
+	}
+	public int deleteBoardHate(int bno, String boardMemberId) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("bno", bno);
+		map.put("id", boardMemberId);
+		return mapper.deleteBoardHate(map);
+	}
+	
+	public int selectBoardHateCount(int bno) {
+		return mapper.selectBoardHateCount(bno);
+	}
 
 	
 	
