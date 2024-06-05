@@ -18,6 +18,7 @@ public interface BoardMapper {
 	int insertBoardHate(Map<String, Object> map);
 	int deleteBoardHate(Map<String, Object> map);
 	int selectBoardHateCount(int bno);
+	List<BoardDTO> selectBoardNewList(Map<String, Object> map);
 
 }
 

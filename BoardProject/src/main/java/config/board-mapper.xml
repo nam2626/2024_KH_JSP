@@ -56,6 +56,11 @@
 	<select id="selectBoardHateCount" parameterType="int">
 		select count(*) from board_content_hate where board_no = #{bno}
 	</select>
+	<select id="selectBoardNewList" parameterType="map" resultMap="board">
+		SELECT * FROM
+		(SELECT CEIL(ROW_NUMBER() OVER(ORDER BY B.BOARD_NO DESC) / #{pageContentCount}) AS PAGE_NO,
+		B.* FROM BOARD_VIEW B) WHERE PAGE_NO = #{pageNo};
+	</select>
 </mapper>
 
 

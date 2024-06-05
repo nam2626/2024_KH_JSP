@@ -76,6 +76,13 @@ public class BoardService {
 		return mapper.selectBoardHateCount(bno);
 	}
 
+	public List<BoardDTO> selectBoardList(int pageNo, int pageContentEa) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("pageNo", pageNo);
+		map.put("pageContentCount", pageContentEa);
+		return mapper.selectBoardNewList(map);
+	}
+
 	
 	
 	

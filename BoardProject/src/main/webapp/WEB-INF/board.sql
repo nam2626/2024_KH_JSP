@@ -34,6 +34,19 @@ ADD CONSTRAINT PK_BOARD_CONTENT_LIKE PRIMARY KEY(BOARD_NO, BOARD_MEMBER_ID);
 ALTER TABLE BOARD_CONTENT_HATE 
 ADD CONSTRAINT PK_BOARD_CONTENT_HATE PRIMARY KEY(BOARD_NO, BOARD_MEMBER_ID);
 
+--------------------------------------------------------
+--페이지 번호와 한페이지당 보여줄 게시글 개수를 이용해서 게시글 목록을 출력
+--페이지 번호 : 1, 한페이지당 보여줄 게시글 개수 : 20;
+--최근에 쓴 글이 맨 앞에 나오게끔 처리
+SELECT * FROM BOARD_VIEW;
+
+SELECT * FROM
+(SELECT CEIL(ROW_NUMBER() OVER(ORDER BY B.BOARD_NO DESC) / 20) AS PAGE_NO,
+B.* FROM BOARD_VIEW B) WHERE PAGE_NO = 1;
+
+--전체 게시글 개수
+SELECT COUNT(*) FROM BOARD_VIEW;
+
 
 --------------------------------------------------------
 --  ������ ������ - ������-6��-03-2024   
