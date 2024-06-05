@@ -20,7 +20,7 @@ public class MainController implements Controller {
 		String pageContentEa = request.getParameter("pageContentEa");
 		
 		//만약에 로그인해서 페이지 번호랑 게시글 개수 정보가 없을 경우
-		pageNo = pageNo == null ? "0" : pageNo;
+		pageNo = pageNo == null ? "1" : pageNo;
 		pageContentEa = pageContentEa == null ? "20" : pageContentEa;
 				
 //		List<BoardDTO> list = BoardService.getInstance().selectBoardList();
