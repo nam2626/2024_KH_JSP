@@ -48,6 +48,22 @@ public class PaggingVO {
 			lastNo = getTotalPage();
 		return lastNo;
 	}
+	//이전 페이지 그룹이 있냐?
+	public boolean isPriviousPageGroup() {
+		return getCurrentPageGroupNo() > 1;
+	}
+	//다음 페이지 그룹이 있냐?
+	public boolean isNextPageGroup() {
+		return getCurrentPageGroupNo() <  getTotalPageGroup();
+	}
+
+	@Override
+	public String toString() {
+		return "PaggingVO [count=" + count + ", currentPage=" + currentPage + ", pageOfContentCount="
+				+ pageOfContentCount + ", PAGE_GROUP_OF_COUNT=" + PAGE_GROUP_OF_COUNT + "]";
+	}
+	
+	
 }
 
 
