@@ -23,6 +23,7 @@ public interface BoardMapper {
 	int selectBoardTotalCount();
 	int insertBoardComment(BoardCommentDTO boardCommentDTO);
 	List<BoardCommentDTO> selectBoardCommentList(int bno);
+	int deleteBoardComment(int cno);
 
 }
 

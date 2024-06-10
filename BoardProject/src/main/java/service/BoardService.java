@@ -96,6 +96,10 @@ public class BoardService {
 		return mapper.selectBoardCommentList(bno);
 	}
 
+	public int deleteBoardComment(int cno) {
+		return mapper.deleteBoardComment(cno);
+	}
+
 	
 	
 	
