@@ -80,6 +80,23 @@
 							<a href="./main.do?pageNo=${i }">${i }</a>
 						</c:if>
 					</c:forEach>
+					
+					<!--
+						다음 페이지 그룹으로 이동 
+						다음 페이지 그룹이 있을때만 표시
+						▶ 를 클릭시 다음 그룹의 첫번째 페이지로 이동
+						마지막 페이지 그룹이면 해당 링크가 나오면 안됨 
+						
+						1번째 페이지 그룹 1 2 3 4
+						2번째 페이지 그룹 5 6 7 8
+						5번 페이지로 이동
+					 -->
+					<c:if test="${pagging.nextPageGroup }">
+						<a href="./main.do?pageNo=${pagging.endPageOfPageGroup + 1 }">
+							▶
+						</a>
+					</c:if>
+					
 					<a href="./board_write.jsp">글쓰기</a>
 				</td>
 			</tr>
