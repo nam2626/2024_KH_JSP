@@ -16,7 +16,15 @@
  		<result column="BOARD_CONTENT_HATE" property="boardHate"/>
  	</resultMap>
  	<!-- BoardCommentDTO에 해당하는 resultMap -->
- 	
+ 	<resultMap type="dto.BoardCommentDTO" id="comment">
+ 		<id column="BOARD_COMMENT_NO" property="cno"/>
+ 		<result column="BOARD_NO" property="bno"/>
+ 		<result column="BOARD_MEMBER_ID" property="writer"/>
+ 		<result column="BOARD_COMMENT_CONTENT" property="comment"/>
+ 		<result column="BOARD_COMMENT_WRITE_DATE" property="cdate"/>
+ 		<result column="COMMENT_LIKE" property="clike"/>
+ 		<result column="COMMENT_HATE" property="chate"/>
+ 	</resultMap>
  	
  	<!-- 전체 게시글 조회하는 SQL문 작성  -->
 	<select id="selectBoardList" resultMap="board">
