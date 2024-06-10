@@ -23,6 +23,7 @@ public class BoardViewController implements Controller {
 		//게시글 댓글 목록을 받아옴
 		List<BoardCommentDTO> list =
 				BoardService.getInstance().selectBoardCommentList(bno);
+		System.out.println(list);
 		request.setAttribute("commentList", list);
 		
 		return new ModelAndView(false, "./board_view.jsp");

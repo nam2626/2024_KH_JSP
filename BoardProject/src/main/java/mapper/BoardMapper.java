@@ -22,6 +22,7 @@ public interface BoardMapper {
 	List<BoardDTO> selectBoardNewList(Map<String, Object> map);
 	int selectBoardTotalCount();
 	int insertBoardComment(BoardCommentDTO boardCommentDTO);
+	List<BoardCommentDTO> selectBoardCommentList(int bno);
 
 }
 

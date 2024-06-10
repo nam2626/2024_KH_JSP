@@ -79,6 +79,13 @@
 		BOARD_COMMENT(BOARD_COMMENT_NO, BOARD_NO, BOARD_MEMBER_ID, BOARD_COMMENT_CONTENT)
 		VALUES(BOARD_COMMENT_SEQ.NEXTVAL,#{bno},#{writer},#{comment})
 	</insert>
+	
+	<select id="selectBoardCommentList" parameterType="int" resultMap="comment">
+		SELECT * FROM BOARD_COMMENT_VIEW 
+		WHERE BOARD_NO = #{bno}
+		ORDER BY BOARD_COMMENT_NO DESC
+				
+	</select>
 </mapper>
 
 

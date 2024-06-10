@@ -92,6 +92,10 @@ public class BoardService {
 		return mapper.insertBoardComment(boardCommentDTO);
 	}
 
+	public List<BoardCommentDTO> selectBoardCommentList(int bno) {
+		return mapper.selectBoardCommentList(bno);
+	}
+
 	
 	
 	
