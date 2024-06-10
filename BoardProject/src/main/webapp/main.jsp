@@ -60,7 +60,16 @@
 		<tfoot>
 			<tr>
 				<td colspan="7">
-				
+					<!-- 
+						이전 페이지 그룹으로 이동 - 이전 페이지 그룹이 있을때만
+						 		◀ 를 클릭시 이전 그룹의 마지막 페이지로 이동
+					-->
+					<c:if test="${pagging.priviousPageGroup }">
+						<a href="./main.do?pageNo=${pagging.startPageOfPageGroup -1 }">
+							◀
+						</a>
+					</c:if>
+										
 					<!-- 
 						페이징 결과 출력
 							PaggingVO에 있는 getStartPageOfPageGroup,
