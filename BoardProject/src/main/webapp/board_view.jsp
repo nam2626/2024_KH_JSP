@@ -200,9 +200,23 @@
 			 </td>
 	 	</tr>
 		 </c:if>
+		 <tr>
+		 	<td colspan="2">
+		 		<!-- 댓글 입력 폼 -->
+		 		<div class="comment_form">
+					<form action="commentWrite.do" method="post">
+						<input type="hidden" name="bno" value="${board.bno }">
+						<textarea name="comment" placeholder="댓글을 입력하세요"></textarea>
+						<button>댓글작성</button>
+					</form>
+				</div>
+		 	</td>
+		 </tr>
 	</table>
 	<hr>
-	
+	<!-- 
+		댓글 내용 출력
+	 -->
 	</div>
 </body>
 </html>
