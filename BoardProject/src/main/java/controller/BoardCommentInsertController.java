@@ -17,7 +17,7 @@ public class BoardCommentInsertController implements Controller {
 		String comment = request.getParameter("comment");
 //		BoardMemberDTO dto = (BoardMemberDTO)request.getSession().getAttribute("use");
 //		String writer = dto.getBoardMemberId();
-		String writer = ((BoardMemberDTO)request.getSession().getAttribute("use")).getBoardMemberId();
+		String writer = ((BoardMemberDTO)request.getSession().getAttribute("user")).getBoardMemberId();
 		
 		BoardService.getInstance().insertBoardComment(
 				new BoardCommentDTO(bno, writer, comment));
