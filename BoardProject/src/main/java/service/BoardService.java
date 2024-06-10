@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import config.DBManager;
+import dto.BoardCommentDTO;
 import dto.BoardDTO;
 import mapper.BoardMapper;
 
@@ -85,6 +86,10 @@ public class BoardService {
 
 	public int selectBoardTotalCount() {
 		return mapper.selectBoardTotalCount();
+	}
+
+	public int insertBoardComment(BoardCommentDTO boardCommentDTO) {
+		return mapper.insertBoardComment(boardCommentDTO);
 	}
 
 	

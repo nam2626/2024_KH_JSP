@@ -3,6 +3,7 @@ package mapper;
 import java.util.List;
 import java.util.Map;
 
+import dto.BoardCommentDTO;
 import dto.BoardDTO;
 
 public interface BoardMapper {
@@ -20,6 +21,7 @@ public interface BoardMapper {
 	int selectBoardHateCount(int bno);
 	List<BoardDTO> selectBoardNewList(Map<String, Object> map);
 	int selectBoardTotalCount();
+	int insertBoardComment(BoardCommentDTO boardCommentDTO);
 
 }
 
