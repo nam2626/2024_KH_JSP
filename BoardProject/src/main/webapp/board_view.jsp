@@ -146,6 +146,14 @@
 				console.log(error);
 			})
 		}
+		//댓글 좋아요
+		document.querySelectorAll('.btn_comment_like, .btn_comment_hate').forEach((item) => {
+			item.onclick = () => {
+				alert(item.parentNode.parentNode.querySelector('input').value);
+				//console.log(item.parentNode.parentNode.querySelector('input'));
+			}
+			
+		});
 	}
 
 </script>
