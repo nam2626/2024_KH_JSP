@@ -1,7 +1,9 @@
 package controller;
 
 import java.io.IOException;
+import java.util.List;
 
+import dto.BoardCommentDTO;
 import dto.BoardDTO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -18,6 +20,10 @@ public class BoardViewController implements Controller {
 		BoardDTO dto = BoardService.getInstance().selectBoard(bno);
 		dto.setBoardContent(dto.getBoardContent().replaceAll("\n" , "<br>"));
 		request.setAttribute("board", dto);
+		//게시글 댓글 목록을 받아옴
+		List<BoardCommentDTO> list =
+				BoardService.getInstance().selectBoardCommentList(bno);
+		request.setAttribute("commentList", list);
 		
 		return new ModelAndView(false, "./board_view.jsp");
 	}
