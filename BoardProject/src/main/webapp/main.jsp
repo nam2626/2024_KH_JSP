@@ -72,7 +72,13 @@
 					 -->
 					<c:forEach var="i" begin="${pagging.startPageOfPageGroup }" 
 												end="${pagging.endPageOfPageGroup }">
-						<a href="./main.do?pageNo=${i }">${i }</a>
+						<!-- i가 현재 페이지 번호와 같으면 링크를 걸지 않음 -->
+						<c:if test="${i == pagging.currentPage }">
+							<a>${i }</a>
+						</c:if>
+						<c:if test="${i != pagging.currentPage }">
+							<a href="./main.do?pageNo=${i }">${i }</a>
+						</c:if>
 					</c:forEach>
 					<a href="./board_write.jsp">글쓰기</a>
 				</td>
