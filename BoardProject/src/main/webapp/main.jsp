@@ -11,6 +11,9 @@
 		margin:0;
 		padding:0;
 	}
+	body{
+		height:3000px;
+	}
 	table{
 		border-collapse: collapse;
 		margin: 20px auto;
@@ -56,13 +59,34 @@
 		</tbody>
 		<tfoot>
 			<tr>
-				<td colspan="7"><a href="./board_write.jsp">글쓰기</a></td>
+				<td colspan="7">
+				
+					<!-- 
+						페이징 결과 출력
+							PaggingVO에 있는 getStartPageOfPageGroup,
+							getEndPageOfPageGroup 메서드를 이용해서
+							jstl의 forEach를 이용해서 게시판 페이지 번호를 출력
+		
+							<a href="./main.do?pageNo=번호">번호</a>	
+					
+					 -->
+					<c:forEach var="i" begin="${pagging.startPageOfPageGroup }" 
+												end="${pagging.endPageOfPageGroup }">
+						<a href="./main.do?pageNo=${i }">${i }</a>
+					</c:forEach>
+					<a href="./board_write.jsp">글쓰기</a>
+				</td>
 			</tr>
 		</tfoot>
 	</table>
-
+	${pagging.toString() }
 </body>
 </html>
+
+
+
+
+
 
 
 

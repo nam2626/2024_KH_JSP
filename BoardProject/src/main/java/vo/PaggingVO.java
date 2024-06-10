@@ -60,8 +60,14 @@ public class PaggingVO {
 	@Override
 	public String toString() {
 		return "PaggingVO [count=" + count + ", currentPage=" + currentPage + ", pageOfContentCount="
-				+ pageOfContentCount + ", PAGE_GROUP_OF_COUNT=" + PAGE_GROUP_OF_COUNT + "]";
+				+ pageOfContentCount + ", PAGE_GROUP_OF_COUNT=" + PAGE_GROUP_OF_COUNT + ", getCurrentPage()="
+				+ getCurrentPage() + ", getTotalPage()=" + getTotalPage() + ", getTotalPageGroup()="
+				+ getTotalPageGroup() + ", getCurrentPageGroupNo()=" + getCurrentPageGroupNo()
+				+ ", getStartPageOfPageGroup()=" + getStartPageOfPageGroup() + ", getEndPageOfPageGroup()="
+				+ getEndPageOfPageGroup() + ", isPriviousPageGroup()=" + isPriviousPageGroup() + ", isNextPageGroup()="
+				+ isNextPageGroup() + "]";
 	}
+
 	
 	
 }
