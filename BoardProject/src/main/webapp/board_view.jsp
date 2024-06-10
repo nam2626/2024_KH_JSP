@@ -222,10 +222,25 @@
 		댓글 내용
 		삭제버튼
 	 -->
-	 
+	 <c:forEach var="comment" items="${commentList}">
+	 	<div class="comment">
+	 		<p>
+	 			<input type="hidden" name="cno" value="${comment.cno }"/>
+	 			<span>${comment.writer }</span>
+	 			<span>작성일 : ${comment.cdate }</span>
+	 			<span><a href="#" class="btn_comment_like">좋아요 : <span>${comment.clike }</span></a></span>
+	 			<span><a href="#" class="btn_comment_hate">싫어요 : <span>${comment.chate}</span></a></span>
+	 		</p>
+	 		<p>${comment.comment }</p>
+	 		<c:if test="${sessionScope.user.boardMemberId == comment.writer }">
+	 			<a href="./boardCommentDelete.do?cno=${comment.cno }">댓글 삭제</a>
+	 		</c:if>
+	 	</div>
+	 </c:forEach>
 	</div>
 </body>
 </html>
+
 
 
 
