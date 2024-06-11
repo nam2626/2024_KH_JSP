@@ -26,7 +26,7 @@
  		<result column="COMMENT_HATE" property="chate"/>
  	</resultMap>
  	<!-- FileDTO에 해당하는 resultMap -->
- 	<resultMap type="dto.FileDTO" id="file">
+ 	<resultMap type="dto.FileDTO" id="boardFile">
  		<result column="BOARD_FILE_NO" property="fno"/>
  		<result column="BOARD_NO" property="bno"/>
  		<result column="BOARD_FILE_URL" property="path"/>
@@ -50,8 +50,8 @@
 		values(#{fno}, #{bno}, #{path})
 	</insert>
 	
-	<select id="selectBoardFileList" parameterType="int" resultMap="file">
-		select * from board_file where board_no = #{bno}	
+	<select id="selectBoardFileList" parameterType="int" resultMap="boardFile">
+		select board_file_no, board_no, board_file_url from board_file where board_no = #{bno}	
 	</select>
 	
 	<update id="updateBoard" parameterType="dto.BoardDTO">

@@ -40,7 +40,7 @@ public class FileDTO {
 	public void setPath(String path) {
 		this.path = path;
 		File file = new File(path);
-		
+		this.fileName = file.getName();
 		String postfix = file.getName().substring(fileName.lastIndexOf(".")+1).toLowerCase();
 		switch(postfix) {
 		case "png":
