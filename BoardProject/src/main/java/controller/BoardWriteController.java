@@ -62,6 +62,11 @@ public class BoardWriteController implements Controller {
 			e.printStackTrace();
 		}
 		//게시글 추가
+		//0. 글번호 받음
+		int bno = BoardService.getInstance().getBoardNo();
+		//파일 정보 리스트에 글번호를 저장
+		list.forEach(t -> t.setBno(bno));
+		
 		//1. Parameter 받음
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");

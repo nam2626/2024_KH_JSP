@@ -129,6 +129,10 @@ public class BoardService {
 		return mapper.updateBoardCount(bno);
 	}
 
+	public int getBoardNo() {
+		return mapper.getBoardNo();
+	}
+
 	
 	
 	
