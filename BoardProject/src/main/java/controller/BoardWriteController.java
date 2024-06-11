@@ -1,6 +1,9 @@
 package controller;
 
+import java.io.File;
 import java.io.IOException;
+
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 
 import dto.BoardMemberDTO;
 import jakarta.servlet.http.HttpServletRequest;
@@ -21,6 +24,27 @@ public class BoardWriteController implements Controller {
 					+ "</script>");
 			return null;
 		}
+		//파일 업로드
+		/*
+		 * 1. 업로드할 경로, DiskFileItemFactory 생성
+		 * 2. 사용자가 보낸 내용을 받아서, BoardDTO와 FileDTO를 생성
+		 * 3. 파일 쓰기 수행
+		 * 4. DB에 게시글을 등록하고 나서 파일목록을 테이블 등록
+		*/
+		//업로드할 기본 폴더 설정
+		File userRoot = new File("c:\\fileupload\\");
+		//업로드할 기본 폴더가 없으면 경로까지의 폴더를 생성
+		if(!userRoot.exists()) {
+			System.out.println("파일 업로드할 폴더 생성");
+			userRoot.mkdirs();
+		}
+		System.out.println(userRoot.getAbsolutePath());
+		
+		DiskFileItemFactory factory = new DiskFileItemFactory();
+		factory.setSizeThreshold(1024*1024);//버퍼 메모리
+		factory.setRepository(userRoot);//업로드할 폴더
+		
+		//게시글 추가
 		//1. Parameter 받음
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
