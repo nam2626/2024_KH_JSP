@@ -24,6 +24,8 @@ public interface BoardMapper {
 	int insertBoardComment(BoardCommentDTO boardCommentDTO);
 	List<BoardCommentDTO> selectBoardCommentList(int bno);
 	int deleteBoardComment(int cno);
+	int insertBoardCommentLike(Map<String, Object> map);
+	int deleteBoardCommentLike(Map<String, Object> map);
 
 }
 

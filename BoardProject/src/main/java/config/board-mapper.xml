@@ -91,6 +91,15 @@
 	<delete id="deleteBoardComment" parameterType="int">
 		DELETE FROM BOARD_COMMENT WHERE BOARD_COMMENT_NO = #{cno}
 	</delete>
+	
+	<insert id="insertBoardCommentLike" parameterType="map">
+		insert into board_comment_like values(#{id},#{cno})
+	</insert>
+	
+	<delete id="deleteBoardCommentLike" parameterType="map">
+		delete from board_comment_like 
+		where board_member_id like #{id} and cno = #{cno} 
+	</delete>
 </mapper>
 
 

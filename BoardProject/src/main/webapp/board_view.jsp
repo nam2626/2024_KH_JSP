@@ -170,6 +170,12 @@
 		let url = `./comment\${mode ? "Like" : "Hate"}.do?cno=\${cno}`;
 		console.log(url);
 		//ajax 호출
+		fetch(url).then(response => response.json())
+		.then(result => {
+			console.log(result);
+		}).catch(error => {
+			console.log(error);
+		});
 	}
 
 </script>

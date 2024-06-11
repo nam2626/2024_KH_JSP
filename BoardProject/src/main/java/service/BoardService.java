@@ -100,6 +100,19 @@ public class BoardService {
 		return mapper.deleteBoardComment(cno);
 	}
 
+	public int insertBoardCommentLike(String boardMemberId, int cno) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("id", boardMemberId);
+		map.put("cno", cno);
+		return mapper.insertBoardCommentLike(map);
+	}
+	public int deleteBoardCommentLike(String boardMemberId, int cno) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("id", boardMemberId);
+		map.put("cno", cno);
+		return mapper.deleteBoardCommentLike(map);
+	}
+
 	
 	
 	
