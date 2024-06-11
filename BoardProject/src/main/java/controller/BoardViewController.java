@@ -6,6 +6,7 @@ import java.util.List;
 
 import dto.BoardCommentDTO;
 import dto.BoardDTO;
+import dto.FileDTO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
@@ -39,6 +40,9 @@ public class BoardViewController implements Controller {
 				BoardService.getInstance().selectBoardCommentList(bno);
 		System.out.println(list);
 		request.setAttribute("commentList", list);
+		//파일 목록을 받아옴
+		List<FileDTO> flist = BoardService.getInstance().selectBoardFileList(bno);
+		request.setAttribute("fileList", flist);
 		
 		
 		return new ModelAndView(false, "./board_view.jsp");

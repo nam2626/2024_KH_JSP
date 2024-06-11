@@ -138,6 +138,10 @@ public class BoardService {
 		return mapper.insertBoardFile(t);
 	}
 
+	public List<FileDTO> selectBoardFileList(int bno) {
+		return mapper.selectBoardFileList(bno);
+	}
+
 	
 	
 	
