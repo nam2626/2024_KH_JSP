@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.apache.commons.fileupload2.core.DiskFileItemFactory;
 
+import dto.BoardDTO;
 import dto.BoardMemberDTO;
 import dto.FileDTO;
 import jakarta.servlet.ServletException;
@@ -76,7 +77,12 @@ public class BoardWriteController implements Controller {
 //		String writer = dto.getBoardMemberId();
 		String writer = ((BoardMemberDTO) request.getSession().getAttribute("user")).getBoardMemberId();
 		//2. Service 호출 
-		BoardService.getInstance().insertBoard(title,content,writer);
+		BoardDTO dto = new BoardDTO(title, writer, content);
+		dto.setBoardNo(bno);
+		//게시글 등록
+		BoardService.getInstance().insertBoard(dto);
+		//파일목록도 DB에 등록
+		list.forEach(t -> BoardService.getInstance().insertBoardFile(t));
 		//3. 페이지 이동처리
 		return new ModelAndView(true, "./main.do");
 	}

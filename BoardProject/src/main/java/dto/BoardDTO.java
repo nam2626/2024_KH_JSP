@@ -1,7 +1,7 @@
 package dto;
 
 public class BoardDTO {
-	private String boardNo;
+	private int boardNo;
 	private String boardTitle;
 	private String boardMemberId;
 	private String boardMemberNick;
@@ -20,18 +20,18 @@ public class BoardDTO {
 		this.boardContent = boardContent;
 	}
 
-	public BoardDTO(String boardNo, String boardTitle, String boardMemberId, String boardContent) {
+	public BoardDTO(int boardNo, String boardTitle, String boardMemberId, String boardContent) {
 		this.boardNo = boardNo;
 		this.boardTitle = boardTitle;
 		this.boardMemberId = boardMemberId;
 		this.boardContent = boardContent;
 	}
 
-	public String getBoardNo() {
+	public int getBoardNo() {
 		return boardNo;
 	}
 
-	public void setBoardNo(String boardNo) {
+	public void setBoardNo(int boardNo) {
 		this.boardNo = boardNo;
 	}
 

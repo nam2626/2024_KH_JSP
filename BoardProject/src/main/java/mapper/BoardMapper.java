@@ -5,6 +5,7 @@ import java.util.Map;
 
 import dto.BoardCommentDTO;
 import dto.BoardDTO;
+import dto.FileDTO;
 
 public interface BoardMapper {
 
@@ -30,6 +31,7 @@ public interface BoardMapper {
 	int deleteBoardCommentHate(Map<String, Object> map);
 	int updateBoardCount(int bno);
 	int getBoardNo();
+	int insertBoardFile(FileDTO t);
 
 }
 

@@ -8,6 +8,7 @@ import java.util.Map;
 import config.DBManager;
 import dto.BoardCommentDTO;
 import dto.BoardDTO;
+import dto.FileDTO;
 import mapper.BoardMapper;
 
 public class BoardService {
@@ -28,8 +29,8 @@ public class BoardService {
 		return mapper.selectBoardList();
 	}
 
-	public int insertBoard(String title, String content, String writer) {
-		return mapper.insertBoard(new BoardDTO(title, writer, content));
+	public int insertBoard(BoardDTO dto) {
+		return mapper.insertBoard(dto);
 	}
 
 	public BoardDTO selectBoard(int bno) {
@@ -131,6 +132,10 @@ public class BoardService {
 
 	public int getBoardNo() {
 		return mapper.getBoardNo();
+	}
+
+	public int insertBoardFile(FileDTO t) {
+		return mapper.insertBoardFile(t);
 	}
 
 	

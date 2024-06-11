@@ -25,7 +25,12 @@
  		<result column="COMMENT_LIKE" property="clike"/>
  		<result column="COMMENT_HATE" property="chate"/>
  	</resultMap>
- 	
+ 	<!-- FileDTO에 해당하는 resultMap -->
+ 	<resultMap type="dto.FileDTO" id="file">
+ 		<result column="BOARD_FILE_NO" property="fno"/>
+ 		<result column="BOARD_NO" property="bno"/>
+ 		<result column="BOARD_FILE_URL" property="path"/>
+ 	</resultMap>
  	<!-- 전체 게시글 조회하는 SQL문 작성  -->
 	<select id="selectBoardList" resultMap="board">
 		select * from board_view 
@@ -40,6 +45,14 @@
 		insert into board(board_no, board_title, board_content, board_member_id)
 		values(#{boardNo},#{boardTitle},#{boardContent},#{boardMemberId})
 	</insert>
+	<insert id="insertBoardFile" parameterType="dto.FileDTO">
+		insert into board_file(board_file_no, board_no, board_file_url) 
+		values(#{fno}, #{bno}, #{path})
+	</insert>
+	
+	<select id="selectBoardFileList" parameterType="int" resultMap="file">
+		select * from board_file where board_no = #{bno}	
+	</select>
 	
 	<update id="updateBoard" parameterType="dto.BoardDTO">
 		update board set board_title = #{boardTitle}, board_content = #{boardContent}
