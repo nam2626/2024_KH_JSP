@@ -100,6 +100,15 @@
 		delete from board_comment_like 
 		where board_member_id like #{id} and board_comment_no = #{cno} 
 	</delete>
+
+	<insert id="insertBoardCommentHate" parameterType="map">
+		insert into board_comment_hate values(#{id},#{cno})
+	</insert>
+	
+	<delete id="deleteBoardCommentHate" parameterType="map">
+		delete from board_comment_hate 
+		where board_member_id like #{id} and board_comment_no = #{cno} 
+	</delete>
 </mapper>
 
 
