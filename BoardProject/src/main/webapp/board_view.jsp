@@ -149,11 +149,26 @@
 		//댓글 좋아요
 		document.querySelectorAll('.btn_comment_like, .btn_comment_hate').forEach((item) => {
 			item.onclick = () => {
-				alert(item.parentNode.parentNode.querySelector('input').value);
+				//alert(item.parentNode.parentNode.querySelector('input').value);
 				//console.log(item.parentNode.parentNode.querySelector('input'));
+				//클릭한것이 좋아요? 싫어요? 
+				console.log(item.className);
+				let cno = item.parentNode.parentNode.querySelector('input').value;
+				let count = 0;
+				if(item.className == "btn_comment_like")
+					//좋아요를 눌렀을 때
+					count = commentLikeHateAjax(true,cno);
+				else
+					//싫어요를 눌렀을 때
+					count = commentLikeHateAjax(false,cno);
+				//페이지 새로고침
+				//location.reload();
 			}
-			
 		});
+	}
+	function commentLikeHateAjax(mode, cno){
+		let url = `./comment\${mode ? "Like" : "Hate"}.do?cno=\${cno}`;
+		console.log(url);
 	}
 
 </script>

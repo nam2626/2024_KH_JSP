@@ -71,9 +71,11 @@
 		(SELECT CEIL(ROW_NUMBER() OVER(ORDER BY B.BOARD_NO DESC) / #{pageContentCount}) AS PAGE_NO,
 		B.* FROM BOARD_VIEW B) WHERE PAGE_NO = #{pageNo}
 	</select>
+	
 	<select id="selectBoardTotalCount">
 		SELECT COUNT(*) FROM BOARD_VIEW
 	</select>
+	
 	<insert id="insertBoardComment" parameterType="dto.BoardCommentDTO">
 		INSERT INTO 
 		BOARD_COMMENT(BOARD_COMMENT_NO, BOARD_NO, BOARD_MEMBER_ID, BOARD_COMMENT_CONTENT)
