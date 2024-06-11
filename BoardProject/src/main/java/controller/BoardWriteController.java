@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import dto.BoardMemberDTO;
 import jakarta.servlet.http.HttpServletRequest;
@@ -43,6 +44,8 @@ public class BoardWriteController implements Controller {
 		DiskFileItemFactory factory = new DiskFileItemFactory();
 		factory.setSizeThreshold(1024*1024);//버퍼 메모리
 		factory.setRepository(userRoot);//업로드할 폴더
+		
+		ServletFileUpload upload = new ServletFileUpload(factory);
 		
 		//게시글 추가
 		//1. Parameter 받음
