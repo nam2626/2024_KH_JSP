@@ -2,11 +2,14 @@ package controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 import org.apache.commons.fileupload2.core.DiskFileItemFactory;
 
 import dto.BoardMemberDTO;
+import dto.FileDTO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -36,13 +39,22 @@ public class BoardWriteController implements Controller {
 			userRoot.mkdirs();
 		}
 		//업로드한 파일 정보 읽는 부분
+		List<FileDTO> list = new ArrayList<FileDTO>();
 		try {
 			Iterator<Part> it = request.getParts().iterator();
+			int fno = 0;
 			while (it.hasNext()) {
 				Part part = it.next();
 				System.out.println(part.getSize());
 				String fileName = getFilename(part);
 				System.out.println(fileName);
+				if (!fileName.isEmpty()) {
+					//실제 파일 쓰기 부분
+					String path = userRoot.getAbsolutePath() + "\\" + fileName;
+					part.write(path);
+					//DB에 저장할 파일 정보
+					list.add(new FileDTO(new File(path),0,++fno));
+				}
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
