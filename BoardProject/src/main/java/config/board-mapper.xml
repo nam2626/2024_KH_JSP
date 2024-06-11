@@ -98,7 +98,7 @@
 	
 	<delete id="deleteBoardCommentLike" parameterType="map">
 		delete from board_comment_like 
-		where board_member_id like #{id} and cno = #{cno} 
+		where board_member_id like #{id} and board_comment_no = #{cno} 
 	</delete>
 </mapper>
 

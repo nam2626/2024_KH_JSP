@@ -17,10 +17,10 @@ public class BoardCommentLikeController implements Controller {
 		response.setContentType("text/html;charset=utf-8");
 		try {
 			BoardService.getInstance().insertBoardCommentLike(dto.getBoardMemberId(), cno);
-			response.getWriter().println("insert");
+			response.getWriter().println("{result : 'insert'}");
 		}catch (Exception e) {
 			BoardService.getInstance().deleteBoardCommentLike(dto.getBoardMemberId(), cno);
-			response.getWriter().println("delete");
+			response.getWriter().println("{result : 'delete'}");
 		}
 		
 		
