@@ -109,6 +109,11 @@
 		delete from board_comment_hate 
 		where board_member_id like #{id} and board_comment_no = #{cno} 
 	</delete>
+	
+	<update id="updateBoardCount" parameterType="int">
+		update board set board_count = board_count + 1
+		where board_no = #{bno}
+	</update>
 </mapper>
 
 

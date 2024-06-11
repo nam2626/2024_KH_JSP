@@ -125,6 +125,10 @@ public class BoardService {
 		return mapper.deleteBoardCommentHate(map);
 	}
 
+	public int updateBoardCount(int bno) {
+		return mapper.updateBoardCount(bno);
+	}
+
 	
 	
 	
