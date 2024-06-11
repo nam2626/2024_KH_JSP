@@ -39,6 +39,22 @@ public class FileDTO {
 
 	public void setPath(String path) {
 		this.path = path;
+		File file = new File(path);
+		
+		String postfix = file.getName().substring(fileName.lastIndexOf(".")+1).toLowerCase();
+		switch(postfix) {
+		case "png":
+		case "jpg":
+		case "gif":
+		case "bmp":
+			this.type = "image";
+			break;
+		case "mp4":
+			this.type = "video";
+			break;
+		default:
+			this.type = "normal";
+		}
 	}
 
 	public String getFileName() {
