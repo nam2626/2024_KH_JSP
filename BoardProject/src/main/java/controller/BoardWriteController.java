@@ -3,12 +3,13 @@ package controller;
 import java.io.File;
 import java.io.IOException;
 
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.fileupload2.core.DiskFileItemFactory;
 
 import dto.BoardMemberDTO;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.Part;
 import service.BoardService;
 import view.ModelAndView;
 
@@ -40,12 +41,31 @@ public class BoardWriteController implements Controller {
 			userRoot.mkdirs();
 		}
 		System.out.println(userRoot.getAbsolutePath());
+//		
+//		DiskFileItemFactory factory = DiskFileItemFactory.builder().get();
+//		factory.fileItemBuilder().setBufferSize(1024*1024);
+//		factory.fileItemBuilder().setPath(userRoot.getAbsolutePath());
+//		
+		try {
+			Part part = request.getPart("file1");
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ServletException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		DiskFileItemFactory factory = new DiskFileItemFactory();
-		factory.setSizeThreshold(1024*1024);//버퍼 메모리
-		factory.setRepository(userRoot);//업로드할 폴더
 		
-		ServletFileUpload upload = new ServletFileUpload(factory);
+		
+//		factory.setsetSizeThreshold(1024*1024);//버퍼 메모리
+//		factory.setRepository(userRoot);//업로드할 폴더
+//		ServletFileUpload upload = new ServletFileUpload(factory);
+		
+		//폼에서 보낸 모든 내용을 받음
+//		List<FileItem> fileList = upload.parseRequest(request);
+
 		
 		//게시글 추가
 		//1. Parameter 받음
