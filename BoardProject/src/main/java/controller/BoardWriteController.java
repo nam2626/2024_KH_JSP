@@ -2,6 +2,7 @@ package controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Iterator;
 
 import org.apache.commons.fileupload2.core.DiskFileItemFactory;
 
@@ -34,7 +35,20 @@ public class BoardWriteController implements Controller {
 			System.out.println("파일 업로드할 폴더 생성");
 			userRoot.mkdirs();
 		}
-		
+		//업로드한 파일 정보 읽는 부분
+		try {
+			Iterator<Part> it = request.getParts().iterator();
+			while (it.hasNext()) {
+				Part part = it.next();
+				System.out.println(part.getSize());
+				String fileName = getFilename(part);
+				System.out.println(fileName);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ServletException e) {
+			e.printStackTrace();
+		}
 		//게시글 추가
 		//1. Parameter 받음
 		String title = request.getParameter("title");
@@ -49,5 +63,19 @@ public class BoardWriteController implements Controller {
 		//3. 페이지 이동처리
 		return new ModelAndView(true, "./main.do");
 	}
+	
+	//파일명 가져오는 메서드
+		private String getFilename(Part part) {
+			String contentDisp = part.getHeader("content-disposition");
+			System.out.println(contentDisp);
+			String[] split = contentDisp.split(";");
+			for (int i = 0; i < split.length; i++) {
+				String temp = split[i];
+				if (temp.trim().startsWith("filename")) {
+					return temp.substring(temp.indexOf("=") + 2, temp.length() - 1);
+				}
+			}
+			return "";
+		}
 
 }

@@ -43,11 +43,14 @@
 <body>
 	<section>
 		<h2>글쓰기</h2>
-		<form action="./boardWrite.do" method="post">
+		<form action="./boardWrite.do" method="post" enctype="multipart/form-data">
 			<input type="text" name="title" placeholder="제목을 입력하세요">
-			<textarea name="content" placeholder="내용을 입력하세요"></textarea>
+			<textarea name="content" placeholder="내용을 입력하세요"></textarea><br>
 			<input type="hidden" name="writer"
 				value="${sessionScope.user.boardMemberId }">
+			파일 1:<input type="file" name="file"><br>
+			파일 2:<input type="file" name="file"><br>
+			파일 3:<input type="file" name="file"><br>
 			<div class="form_bar">
 				<button type="submit" class="btn_submit">글쓰기</button>
 				<button type="button" class="btn_back">뒤로가기</button>
