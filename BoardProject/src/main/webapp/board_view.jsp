@@ -169,6 +169,7 @@
 	function commentLikeHateAjax(mode, cno){
 		let url = `./comment\${mode ? "Like" : "Hate"}.do?cno=\${cno}`;
 		console.log(url);
+		//ajax 호출
 	}
 
 </script>
