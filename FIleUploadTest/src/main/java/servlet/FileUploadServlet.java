@@ -36,24 +36,27 @@ public class FileUploadServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// 업로드할 기본 폴더 설정
 		File userRoot = new File("c:\\fileupload\\");
+		System.out.println(userRoot.getAbsolutePath());
 		// 업로드할 기본 폴더가 없으면 경로까지의 폴더를 생성
 		if (!userRoot.exists()) {
 			System.out.println("파일 업로드할 폴더 생성");
 			userRoot.mkdirs();
 		}
-		
+		//업로드한 파일 정보 읽는 부분
 		Iterator<Part> it = request.getParts().iterator();
 		while (it.hasNext()) {
 			Part part = it.next();
+			//업로드한 파일이 없으면 건너뜀
+			if(part.getSize() == 0) continue;
 			String fileName = getFilename(part);
 			if (!fileName.isEmpty()) {
 				part.write(userRoot.getAbsolutePath() + "\\" + fileName);
 			}
 		}
-		
-		response.getWriter().append("write finish");
+		response.getWriter().append("{'result':'write finish'}");
 	}
-
+	
+	//파일명 가져오는 메서드
 	private String getFilename(Part part) {
 		String contentDisp = part.getHeader("content-disposition");
 		System.out.println(contentDisp);
