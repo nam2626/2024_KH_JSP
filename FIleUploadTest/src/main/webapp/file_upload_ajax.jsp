@@ -33,7 +33,7 @@
 </head>
 <body>
 	<h1>파일 업로드 테스트</h1>
-    <form action="./fileUpload.do" method="post" enctype="multipart/form-data">
+    <form id="frm">
         파일 : <input type="file" name="file"><br>
         파일 : <input type="file" name="file"><br>
         파일 : <input type="file" name="file"><br>

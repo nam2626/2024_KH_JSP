@@ -46,9 +46,9 @@ public class FileUploadServlet extends HttpServlet {
 		Iterator<Part> it = request.getParts().iterator();
 		while (it.hasNext()) {
 			Part part = it.next();
-			//업로드한 파일이 없으면 건너뜀
-			if(part.getSize() == 0) continue;
+			System.out.println(part.getSize());
 			String fileName = getFilename(part);
+			//파일이 있는지 체크
 			if (!fileName.isEmpty()) {
 				part.write(userRoot.getAbsolutePath() + "\\" + fileName);
 			}
