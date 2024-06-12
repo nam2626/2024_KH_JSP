@@ -32,7 +32,7 @@ public class FileDownServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int bno = Integer.parseInt(request.getParameter("bno"));
 		int fno = Integer.parseInt(request.getParameter("fno"));
-		
+		//전송할 파일 선택
 		File file = new File("c:\\fileupload\\3180046.jpg");
 		response.setHeader("Content-Disposition", "attachement;fileName="+file.getName());
 		response.setHeader("Content-Transfer-Encoding", "binary");

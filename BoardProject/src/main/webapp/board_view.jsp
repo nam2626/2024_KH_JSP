@@ -230,6 +230,20 @@
 			 </td>
 	 	</tr>
 		 </c:if>
+		 <c:if test="${!fileList.isEmpty() }">
+			 <!-- 첨부파일 목록 -->
+			 <tr>
+			 	<td colspan="2">
+				 <c:forEach var="file" items="${fileList }">
+				 	<a href="./fileDown.do?bno=${file.bno }&fno=${file.fno}">${file.fileName}</a><br>
+				 </c:forEach>
+			 	</td>
+			 </tr>	 
+		 </c:if>
+		 <tr>
+		 	
+		 </tr>
+		 
 		 <tr>
 		 	<td colspan="2">
 		 		<!-- 댓글 입력 폼 -->
