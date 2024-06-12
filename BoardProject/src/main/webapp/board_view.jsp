@@ -235,7 +235,8 @@
 			 <tr>
 			 	<td colspan="2">
 				 <c:forEach var="file" items="${fileList }">
-				 	<a href="./fileDown.do?bno=${file.bno }&fno=${file.fno}">${file.fileName}</a><br>
+				 	<a href="./fileDown.do?bno=${file.bno }&fno=${file.fno}" download>${file.fileName}</a><br>
+				 	
 				 </c:forEach>
 			 	</td>
 			 </tr>	 
