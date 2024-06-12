@@ -236,6 +236,13 @@
 			 	<td colspan="2">
 				 <c:forEach var="file" items="${fileList }">
 				 	<a href="./fileDown.do?bno=${file.bno }&fno=${file.fno}" download>${file.fileName}</a><br>
+				 	<!-- 이미지면 파일 링크 아래에 이미지 태그로 해당 이미지를 보여주기 -->
+				 	<c:if test="${file.type == 'image' }">
+				 		<img src="./fileDown.do?bno=${file.bno }&fno=${file.fno}">
+				 	</c:if>
+				 	<c:if test="${file.type == 'video' }">
+				 		<video src="./fileDown.do?bno=${file.bno }&fno=${file.fno}" controls></video>
+				 	</c:if>
 				 	
 				 </c:forEach>
 			 	</td>
