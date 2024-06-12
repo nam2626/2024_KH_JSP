@@ -1,9 +1,12 @@
 package controller;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import dto.BoardDTO;
 import dto.BoardMemberDTO;
+import dto.FileDTO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import service.BoardService;
@@ -33,6 +36,14 @@ public class BoardDeleteController implements Controller {
 			+ "</script>");
 			return null;
 		}
+		//첨부파일 삭제
+		//1. 해당 게시글의 파일 목록을 받아옴
+		List<FileDTO> list = BoardService.getInstance().selectBoardFileList(bno);
+		//2. FileDTO에 있는 path에 해당하는 파일을 삭제
+		list.forEach(item -> {
+			File file = new File(item.getPath());
+			file.delete();
+		});
 		
 		int row = BoardService.getInstance().deleteBoard(bno);
 		
