@@ -54,6 +54,11 @@
 		select board_file_no, board_no, board_file_url from board_file where board_no = #{bno}	
 	</select>
 	
+	<select id="selectBoardFile" parameterType="map" resultMap="boardFile">
+		select board_file_no, board_no, board_file_url from board_file 
+		where board_no = #{bno} and board_file_no = #{fno}
+	</select>
+	
 	<update id="updateBoard" parameterType="dto.BoardDTO">
 		update board set board_title = #{boardTitle}, board_content = #{boardContent}
 		where board_no = #{boardNo}
